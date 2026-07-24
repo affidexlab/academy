@@ -18,10 +18,9 @@ const values = [
 
 
 const regs = [
-  { cat:"Corporate Registration", items:["CAC RC: 9316934 — incorporated 12 February 2026","Private Limited Liability Company (Ltd)","Tax Identification Number (TIN)","SMEDAN MSME Certificate: SUID-5998-5813-3500-9105"] },
-  { cat:"Federal Programme Access", items:["NYSC SAED Registered Training Partner","FME TVET Initial Approval","3MTT Applied Training Provider (Q3 2026)","NBTE Accreditation (site visit in process)","NITDA IICP — registration in process","CPN Corporate Registration — in process"] },
-  { cat:"International Affiliations", items:["Microsoft AI Cloud Partner — verified","UNESCO-UNEVOC Active Member","ACTD (USA) — Institutional Accreditation applied","AWIF SHE-TECH Proposal submitted ($780,000)","World Bank IDEAS/TVET — TSP application in process"] },
-  { cat:"SMEDAN Programmes", items:["SMEDAN Select Programme (SSP)","Conditional Grant Scheme (CGS)","National BDSPs Certification Framework","National Business Skills Initiative (GCSS-2)","Cluster Development Support for MSMEs","SME Databanc Registration"] },
+  { cat:"Corporate Registration", items:["CAC RC: 9316934","Private Limited Liability Company (Ltd)","Tax Identification Number (TIN)","SMEDAN MSME Certificate: SUID-5998-5813-3500-9105"] },
+  { cat:"International Affiliations", items:["Microsoft AI Cloud Partner — Verified Global Partner","UNESCO-UNEVOC Active Member","GIZ TVET Academy — Registered Institution","Cisco Networking Academy — Partner Application Under Review"] },
+  { cat:"Federal Approvals & Registrations", items:["NYSC SAED Registered Training Partner","FME TVET Initial Approval Received","3MTT Applied Training Provider","NBTE Accreditation — In Process"] },
 ];
 
 export default function AcademyAbout() {
@@ -53,7 +52,7 @@ export default function AcademyAbout() {
             <span className="italic" style={{color:"var(--gold-2)"}}>digital skills gap.</span>
           </h1>
           <p className="text-[17px] leading-relaxed mb-8 max-w-[600px]" style={{color:"rgba(255,255,255,0.6)"}}>
-            Affidex Academy Limited is a Nigerian vocational and digital skills institution headquartered in Uyo, Akwa Ibom State. We exist to build employability, enterprise, and income pathways for underserved youth, women, and communities through practical, industry-aligned ICT and technology training.
+            Affidex Academy Limited is a federally registered vocational and digital skills institution headquartered in Uyo, Akwa Ibom State, Nigeria. We exist to build sustainable employability, enterprise development, and income pathways for youth and women across Southern Nigeria through practical, internationally-aligned technology and vocational training.
           </p>
           <div className="flex flex-wrap gap-2">
             {["Microsoft AI Cloud Partner","UNESCO-UNEVOC","NYSC SAED Partner","SMEDAN Certified","FME TVET Approved","CAC RC-9316934"].map((b,i)=>(
@@ -72,7 +71,7 @@ export default function AcademyAbout() {
           <div className="grid gap-6 md:grid-cols-2 max-w-[860px]">
             {[
               {icon:<Target size={20}/>, title:"Our Mission",
-               body:"To deliver practical, affordable, and market-linked ICT training that transitions young Nigerians — especially women, youth, and underserved communities — from exclusion to dignified, sustainable digital livelihoods."},
+               body:"To deliver practical, affordable, and market-linked ICT and vocational training that equips young Nigerians — especially women, youth, and underserved communities — with the skills, credentials, and networks needed to access dignified and sustainable digital livelihoods."},
               {icon:<Eye size={20}/>, title:"Our Vision",
                body:"To become the leading practical technology and vocational training institution in Southern Nigeria — a trusted pipeline of digital talent, women-led enterprises, and community-level economic transformation across Akwa Ibom, Cross River, Abia, Delta, and beyond."},
             ].map((m,i)=>(
@@ -113,9 +112,9 @@ export default function AcademyAbout() {
       {/* ══ REGISTRATIONS ════════════════════════════════════════════ */}
       <section className="py-24" style={{background:"#FFFFFF",borderBottom:"1px solid var(--border)"}}>
         <div className="container">
-          <div className="label mb-5">Institutional Standing</div>
+          <div className="label mb-5">Accreditations & Affiliations</div>
           <h2 className="mb-16 max-w-lg" style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(2rem,3.5vw,3rem)",fontWeight:700,lineHeight:1.15,color:"var(--navy)"}}>
-            Registrations &<br/><span className="italic" style={{color:"var(--gold)"}}>verified affiliations.</span>
+            Credentials &<br/><span className="italic" style={{color:"var(--gold)"}}>verified standing.</span>
           </h2>
           <div className="grid gap-5 sm:grid-cols-2 max-w-[860px]">
             {regs.map((r,i)=>(
@@ -143,7 +142,7 @@ export default function AcademyAbout() {
           </h2>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 max-w-[1000px]">
             {[
-              {photo:CEO_PHOTO,initials:"UES",name:"Utibe-Abasi Emmanuel Samuel",role:"Chairman & CEO",bio:"Founder and Chief Executive. Technology entrepreneur and vocational education advocate based in Uyo. Drove the institution from incorporation to internationally affiliated standing in under 90 days."},
+              {photo:CEO_PHOTO,initials:"UES",name:"Utibe-Abasi Emmanuel Samuel, FIPPN",role:"Chairman & CEO",bio:"Founder and Chief Executive. Technology entrepreneur and vocational education advocate based in Uyo. Drove the institution from incorporation to internationally affiliated standing in under 90 days."},
               {photo:EDIDIONG_PHOTO,name:"Mr. Edidiong Samuel",role:"Managing Director / Head, Training and Curriculum Development",bio:"Oversees all academic operations and curriculum development. Bridges Affidex Academy with the university community and drives campus outreach and institutional partnerships."},
               {photo:GLORY_PHOTO,initials:"GS",name:"Barr. Glory Samuel",role:"Company Legal Representative",bio:"Serves as the Academy's legal representative, overseeing compliance, contracts, and governance matters on behalf of the institution."},
               {photo:EDIKAN_PHOTO,initials:"EM",name:"Mr. Edikan Michael",role:"Head, Partnerships and Business Development",bio:"Leads sponsor and investor engagement, corporate outreach, and community partnerships — securing resources and visibility for each programme cycle."},
@@ -216,13 +215,11 @@ export default function AcademyAbout() {
             <div>
               <div className="label mb-5">Our Training Centres</div>
               <h2 className="mb-8" style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(1.8rem,3vw,2.5rem)",fontWeight:700,lineHeight:1.2,color:"var(--navy)"}}>
-                Two centres.<br/><span className="italic" style={{color:"var(--gold)"}}>One Uyo.</span>
+                Two campuses.<br/><span className="italic" style={{color:"var(--gold)"}}>One city.</span>
               </h2>
               {[
-                {name:"ChainSpace Hub",tag:"Headquarters",note:"150-seat capacity · Flagship operations centre"},
-                {name:"IPPN — Institute of Practising Professionals Nigeria",tag:"Centre 2",note:"Professional development · Central Uyo"},
-                {name:"Cross River State",tag:"Coming 2027",note:"Calabar · 900 beneficiaries target"},
-                {name:"Abia State",tag:"Coming 2027",note:"Aba / Umuahia · Women entrepreneurship focus"},
+                {name:"Affidex Academy — Main Campus",tag:"Headquarters",note:"150-seat capacity · Computer labs · Hardware workstations · Uyo, Akwa Ibom State"},
+                {name:"IPPN — Institute of Practising Professionals Nigeria",tag:"Centre 2",note:"50 Udo Udoma Avenue, Uyo, Akwa Ibom State, Nigeria"},
               ].map((loc,i)=>(
                 <div key={i} className="flex items-start gap-3.5 rounded-xl border bg-white px-5 py-4 mb-3" style={{borderColor:"var(--border)"}}>
                   <MapPin size={15} className="mt-0.5 flex-shrink-0" style={{color:"var(--gold)"}}/>
@@ -282,3 +279,4 @@ export default function AcademyAbout() {
     </div>
   );
 }
+
