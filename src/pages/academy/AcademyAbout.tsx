@@ -20,7 +20,6 @@ const values = [
 const regs = [
   { cat:"Corporate Registration", items:["CAC RC: 9316934","Private Limited Liability Company (Ltd)","Tax Identification Number (TIN)","SMEDAN MSME Certificate: SUID-5998-5813-3500-9105"] },
   { cat:"International Affiliations", items:["Microsoft AI Cloud Partner — Verified Global Partner","UNESCO-UNEVOC Active Member","GIZ TVET Academy — Registered Institution","Cisco Networking Academy — Partner Application Under Review"] },
-  { cat:"Federal Approvals & Registrations", items:["NYSC SAED Registered Training Partner","FME TVET Initial Approval Received","3MTT Applied Training Provider","NBTE Accreditation — In Process"] },
 ];
 
 export default function AcademyAbout() {
@@ -55,7 +54,7 @@ export default function AcademyAbout() {
             Affidex Academy Limited is a federally registered vocational and digital skills institution headquartered in Uyo, Akwa Ibom State, Nigeria. We exist to build sustainable employability, enterprise development, and income pathways for youth and women across Southern Nigeria through practical, internationally-aligned technology and vocational training.
           </p>
           <div className="flex flex-wrap gap-2">
-            {["Microsoft AI Cloud Partner","UNESCO-UNEVOC","NYSC SAED Partner","SMEDAN Certified","FME TVET Approved","CAC RC-9316934"].map((b,i)=>(
+            {["Microsoft AI Cloud Partner","UNESCO-UNEVOC","SMEDAN Certified","CAC RC-9316934"].map((b,i)=>(
               <span key={i} className="text-[11px] font-semibold px-3 py-1.5 rounded-full"
                 style={{background:"rgba(200,146,42,0.15)",border:"1px solid rgba(200,146,42,0.35)",color:"var(--gold-2)"}}>
                 ✓ {b}
@@ -183,10 +182,7 @@ export default function AcademyAbout() {
             {[
               {name:"Microsoft",    logo:"https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg"},
               {name:"UNESCO",       logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Logo_UNESCO_2021.svg/400px-Logo_UNESCO_2021.svg.png"},
-              {name:"NYSC SAED",    logo:"https://www.nysc.gov.ng/img/nysclogo.png"},
               {name:"SMEDAN",       logo:"https://smedan.gov.ng/wp-content/uploads/2024/03/Group-1.png"},
-              {name:"Fed. Min. of Education", logo:"https://education.gov.ng/wp-content/uploads/2023/09/FME-Logo.png"},
-              {name:"3MTT Nigeria", logo:"https://3mtt.nitda.gov.ng/wp-content/uploads/2023/10/Group-5-181x101.png"},
               {name:"CAC Nigeria",  logo:CAC_B64},
               {name:"IPPN",         logo:IPPN_B64},
             ].map((p,i)=>(

@@ -134,7 +134,7 @@ function Footer() {
 
             {/* Affiliation pills */}
             <div className="flex flex-wrap gap-2">
-              {["CAC Registered","SMEDAN Certified","Microsoft AI Partner","UNESCO-UNEVOC","NYSC SAED","FME TVET"].map((a, i) => (
+              {["CAC Registered","SMEDAN Certified","Microsoft AI Partner","UNESCO-UNEVOC"].map((a, i) => (
                 <span key={i} className="text-[10px] font-semibold px-2.5 py-1 rounded-full"
                   style={{ background: "rgba(200,146,42,0.12)", border: "1px solid rgba(200,146,42,0.22)", color: "var(--gold-2)" }}>
                   ✓ {a}
