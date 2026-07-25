@@ -3,7 +3,7 @@ import { useEffect } from "react";
 interface SEOProps {
   title: string;
   description: string;
-  /** Path after the domain, e.g. "/academy" or "/academy/about" */
+  /** Path after the domain, e.g. "" or "/about" */
   path?: string;
   image?: string;
   /** Set true on error/utility pages (e.g. 404) so they aren't indexed */

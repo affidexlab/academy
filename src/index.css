@@ -46,14 +46,14 @@ body {
 ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 99px; opacity: 0.4; }
 
 /* Container */
-.container { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 1.5rem; }
-@media (min-width: 480px)  { .container { padding: 0 2rem; } }
-@media (min-width: 768px)  { .container { padding: 0 2.5rem; } }
-@media (min-width: 1024px) { .container { padding: 0 3rem; } }
+.container { width: 100%; max-width: 1180px; margin: 0 auto; padding-inline: 1.5rem; }
+@media (min-width: 480px)  { .container { padding-inline: 2rem; } }
+@media (min-width: 768px)  { .container { padding-inline: 2.5rem; } }
+@media (min-width: 1024px) { .container { padding-inline: 3rem; } }
 
 /* ── Infinite ticker ──────────────────────────────────────────────────── */
 @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-.ticker-inner { display: flex; width: max-content; animation: ticker 35s linear infinite; }
+.ticker-inner { display: flex; gap: 10px; width: max-content; animation: ticker 35s linear infinite; }
 .ticker-inner:hover { animation-play-state: paused; }
 
 /* ── Fade animations ─────────────────────────────────────────────────── */
