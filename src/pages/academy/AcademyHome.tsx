@@ -9,7 +9,7 @@ import { useState, useEffect, useRef } from "react";
 const team = [
   {
     photo: CEO_PHOTO,
-    name: "Utibe-Abasi Emmanuel Samuel",
+    name: "Utibe-Abasi Emmanuel Samuel, FIPPN",
     role: "Chairman & CEO",
     tag: "Founder",
   },
@@ -41,19 +41,13 @@ const IPPN_B64 = "data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BS
 const partners = [
   { name:"Microsoft", sub:"AI Cloud Partner", logo:"https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg", pad:8 },
   { name:"UNESCO-UNEVOC", sub:"TVET Network", logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Logo_UNESCO_2021.svg/400px-Logo_UNESCO_2021.svg.png", pad:6 },
-  { name:"NYSC SAED", sub:"Training Partner", logo:"https://www.nysc.gov.ng/img/nysclogo.png", pad:4 },
   { name:"SMEDAN", sub:"Certified MSME", logo:"https://smedan.gov.ng/wp-content/uploads/2024/03/Group-1.png", pad:8 },
-  { name:"Fed. Min. of Education", sub:"TVET Approved", logo:"https://education.gov.ng/wp-content/uploads/2023/09/FME-Logo.png", pad:4 },
-  { name:"3MTT Nigeria", sub:"Applied Partner", logo:"https://3mtt.nitda.gov.ng/wp-content/uploads/2023/10/Group-5-181x101.png", pad:8 },
   { name:"CAC Nigeria", sub:"RC-9316934", logo:CAC_B64, pad:4 },
   { name:"IPPN", sub:"Centre Partner", logo:IPPN_B64, pad:4 },
   // duplicates for seamless loop
   { name:"Microsoft", sub:"AI Cloud Partner", logo:"https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg", pad:8 },
   { name:"UNESCO-UNEVOC", sub:"TVET Network", logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Logo_UNESCO_2021.svg/400px-Logo_UNESCO_2021.svg.png", pad:6 },
-  { name:"NYSC SAED", sub:"Training Partner", logo:"https://www.nysc.gov.ng/img/nysclogo.png", pad:4 },
   { name:"SMEDAN", sub:"Certified MSME", logo:"https://smedan.gov.ng/wp-content/uploads/2024/03/Group-1.png", pad:8 },
-  { name:"Fed. Min. of Education", sub:"TVET Approved", logo:"https://education.gov.ng/wp-content/uploads/2023/09/FME-Logo.png", pad:4 },
-  { name:"3MTT Nigeria", sub:"Applied Partner", logo:"https://3mtt.nitda.gov.ng/wp-content/uploads/2023/10/Group-5-181x101.png", pad:8 },
   { name:"CAC Nigeria", sub:"RC-9316934", logo:CAC_B64, pad:4 },
   { name:"IPPN", sub:"Centre Partner", logo:IPPN_B64, pad:4 },
 ];
@@ -88,7 +82,7 @@ const programmes = [
 
 const whyUs = [
   { icon:<Zap size={22}/>, title:"70% Hands-On Delivery",
-    body:"Not death by PowerPoint. Every session is lab-first, project-driven. You leave with a real portfolio, not a paper certificate." },
+    body:"No passive lectures. Every session is lab-first, project-driven. You leave with a real portfolio, not a paper certificate." },
   { icon:<Award size={22}/>, title:"Microsoft AI Cloud Partner",
     body:"We carry one of the most respected tech credentials globally — verified, not just registered. That trust transfers to our graduates." },
   { icon:<Shield size={22}/>, title:"UNESCO-UNEVOC Recognised",
@@ -498,19 +492,16 @@ export default function AcademyHome() {
               <span className="italic" style={{ color:"var(--gold)" }}>that matter globally.</span>
             </h2>
             <p className="mt-5 text-[15.5px] leading-relaxed" style={{ color:"var(--text-mid)" }}>
-              Incorporated February 2026 — in under 90 days we secured verified affiliations across global, federal, and state-level platforms.
+              In under 90 days of operation, we secured verified affiliations across global, federal, and state-level platforms.
             </p>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { name:"Microsoft", role:"AI Cloud Partner", detail:"Verified global partner status for technology training and AI solutions delivery — not a sign-up, a recognised designation.", logo:"https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg", dot:"#2196F3" },
               { name:"UNESCO-UNEVOC", role:"TVET Network Member", detail:"Active in UNESCO's global vocational education community spanning 167 countries worldwide.", logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Logo_UNESCO_2021.svg/400px-Logo_UNESCO_2021.svg.png", dot:"#03A9F4" },
-              { name:"NYSC SAED", role:"Registered Training Partner", detail:"Enabling structured digital skills delivery to corps members during National Service across our states.", logo:"https://www.nysc.gov.ng/img/nysclogo.png", dot:"#4CAF50" },
-              { name:"SMEDAN", role:"Certified MSME", detail:"SUID-5998-5813-3500-9105 — enrolled across 6 SMEDAN programmes including grants, loans, and capacity building.", logo:"https://smedan.gov.ng/wp-content/uploads/2024/03/Group-1.png", dot:"#8BC34A" },
-              { name:"Fed. Min. of Education", role:"TVET Initial Approval", detail:"FME TVET initial approval received — NBTE site visit scheduled. Qualifying us for federal training delivery contracts.", logo:"https://education.gov.ng/wp-content/uploads/2023/09/FME-Logo.png", dot:"#FF9800" },
-              { name:"CAC Nigeria", role:"RC-9316934", detail:"Incorporated 12 February 2026 under the Corporate Affairs Commission of Nigeria as a Private Limited Company.", logo:CAC_B64, dot:"#F44336" },
+              { name:"SMEDAN", role:"Certified MSME", detail:"SUID-5998-5813-3500-9105 — certified under Nigeria's Small and Medium Enterprises Development Agency.", logo:"https://smedan.gov.ng/wp-content/uploads/2024/03/Group-1.png", dot:"#8BC34A" },
+              { name:"CAC Nigeria", role:"RC-9316934", detail:"Registered under the Corporate Affairs Commission of Nigeria as a Private Limited Company.", logo:CAC_B64, dot:"#F44336" },
               { name:"IPPN", role:"Centre Partner", detail:"The Institute of Practising Professionals Nigeria — our second training centre, serving professionals and community cohorts in Uyo.", logo:IPPN_B64, dot:"#9C27B0" },
-              { name:"3MTT Nigeria", role:"Applied Training Provider", detail:"Applied under NITDA's 3 Million Technical Talent programme. Q3 2026 commencement confirmed with the National Programme Director.", logo:"https://3mtt.nitda.gov.ng/wp-content/uploads/2023/10/Group-5-181x101.png", dot:"#FFC107" },
             ].map((p,i)=>(
               <div key={i} className="card rounded-2xl border p-5" style={{ borderColor:"var(--border)" }}>
                 <div className="flex items-center justify-between mb-4">
@@ -575,11 +566,11 @@ export default function AcademyHome() {
           </div>
           <div className="grid gap-6 md:grid-cols-2 max-w-[820px] mx-auto">
             {[
-              { name:"ChainSpace Hub", tag:"Headquarters", cap:"150-seat practical training facility",
-                desc:"A premium innovation hub and co-working space housing Affidex Academy's flagship training operations. Equipped with computer labs, hardware repair workstations, digital design stations, and high-speed internet. Physical training supported by a virtual continuity platform for blended delivery.",
+              { name:"Affidex Academy — Main Campus", tag:"Headquarters", cap:"150-seat practical training facility",
+                desc:"Affidex Academy's flagship training facility, equipped with computer labs, hardware repair workstations, digital design stations, and high-speed internet. Physical training supported by a virtual continuity platform for blended delivery.",
                 feats:["150-seat capacity","Computer labs & workstations","Hardware repair bays","Digital design stations","High-speed internet","Blended physical/virtual delivery"] },
               { name:"IPPN — Institute of Practising Professionals Nigeria", tag:"Centre 2", cap:"Professional development facility",
-                desc:"A professional and community training centre located in central Uyo, operating under the Institute of Practising Professionals Nigeria. Serves working professionals, corporate cohorts, government staff, NYSC corps members, and community groups across the state capital.",
+                desc:"Located at 50 Udo Udoma Avenue, Uyo, Akwa Ibom State, this professional and community training centre operates under the Institute of Practising Professionals Nigeria. Serves working professionals, corporate cohorts, government staff, NYSC corps members, and community groups across the state capital.",
                 feats:["Central Uyo location","Professional cohort focus","Corporate & government training","NYSC corps member delivery","Community access programmes","Flexible scheduling"] },
             ].map((c,i)=>(
               <div key={i} className="card rounded-2xl border overflow-hidden" style={{ borderColor:"var(--border)" }}>
