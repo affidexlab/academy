@@ -146,7 +146,7 @@ export default function AcademyAbout() {
           </h2>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 max-w-[1000px]">
             {[
-              { photo: CEO_PHOTO, initials: "UES", name: "Utibe-Abasi Emmanuel Samuel, FIPPN", role: "Chairman & CEO", bio: "Founder and Chief Executive. Technology entrepreneur and vocational education advocate based in Uyo. Drove the institution from incorporation to internationally affiliated standing in under 90 days." },
+              { photo: CEO_PHOTO, initials: "UES", name: "Mr. Utibe-Abasi Emmanuel Samuel, FIPPN", role: "Chairman & CEO", bio: "Founder and Chief Executive. Technology entrepreneur and vocational education advocate based in Uyo. Drove the institution from incorporation to internationally affiliated standing." },
               { photo: EDIDIONG_PHOTO, name: "Mr. Edidiong Samuel", role: "Managing Director / Head, Training and Curriculum Development", bio: "Oversees all academic operations and curriculum development. Bridges Affidex Academy with the university community and drives campus outreach and institutional partnerships." },
               { photo: GLORY_PHOTO, initials: "GS", name: "Barr. Glory Samuel", role: "Company Legal Representative", bio: "Serves as the Academy's legal representative, overseeing compliance, contracts, and governance matters on behalf of the institution." },
               { photo: EDIKAN_PHOTO, initials: "EM", name: "Mr. Edikan Michael", role: "Head, Partnerships and Business Development", bio: "Leads sponsor and investor engagement, corporate outreach, and community partnerships — securing resources and visibility for each programme cycle." },

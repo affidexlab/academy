@@ -9,7 +9,7 @@ import { useState, useEffect, useRef } from "react";
 const team = [
   {
     photo: CEO_PHOTO,
-    name: "Utibe-Abasi Emmanuel Samuel, FIPPN",
+    name: "Mr. Utibe-Abasi Emmanuel Samuel, FIPPN",
     role: "Chairman & CEO",
     tag: "Founder",
   },
