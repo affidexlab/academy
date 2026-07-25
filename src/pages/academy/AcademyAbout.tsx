@@ -20,6 +20,7 @@ const values = [
 const regs = [
   { cat:"Corporate Registration", items:["CAC RC: 9316934","Private Limited Liability Company (Ltd)","Tax Identification Number (TIN)","SMEDAN MSME Certificate: SUID-5998-5813-3500-9105"] },
   { cat:"International Affiliations", items:["Microsoft AI Cloud Partner — Verified Global Partner","UNESCO-UNEVOC Active Member","GIZ TVET Academy — Registered Institution","Cisco Networking Academy — Partner Application Under Review"] },
+  { cat:"Federal Approvals & Registrations", items:["NBTE Accreditation"] },
 ];
 
 export default function AcademyAbout() {
