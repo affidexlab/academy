@@ -74,7 +74,7 @@ export default function AcademyApply() {
     const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || "";
     const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "";
     const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "";
-    const RECIPIENT = import.meta.env.VITE_EMAILJS_RECIPIENT_EMAIL || "affidexacademy@gmail.com";
+    const RECIPIENT = import.meta.env.VITE_EMAILJS_RECIPIENT_EMAIL || "contact@affifexacademy.com.ng";
 
     const message = `
 NEW ACADEMY CONTACT MESSAGE
@@ -167,7 +167,7 @@ Heard about us via: ${form.hearAbout || "Not specified"}
                   </p>
                   <p className="text-emerald-600 text-sm font-medium">
                     Questions? Email us at{" "}
-                    <a href="mailto:affidexacademy@gmail.com" className="underline">affidexacademy@gmail.com</a>
+                    <a href="mailto:contact@affifexacademy.com.ng" className="underline">contact@affifexacademy.com.ng</a>
                   </p>
                 </div>
               ) : (
@@ -285,11 +285,11 @@ Heard about us via: ${form.hearAbout || "Not specified"}
                 <h3 className="text-sm font-bold text-[#0A2540] mb-2">Still have questions?</h3>
                 <p className="text-sm text-slate-500 mb-4">Our team is available to answer any questions before you apply.</p>
                 <a
-                  href="mailto:affidexacademy@gmail.com"
+                  href="mailto:contact@affifexacademy.com.ng"
                   className="inline-flex items-center gap-2 rounded-full border border-[#0A2540] px-4 py-2 text-sm font-semibold text-[#0A2540] hover:bg-[#0A2540] hover:text-white transition-colors"
                 >
                   <Mail size={14} />
-                  affidexacademy@gmail.com
+                  contact@affifexacademy.com.ng
                 </a>
               </div>
             </div>

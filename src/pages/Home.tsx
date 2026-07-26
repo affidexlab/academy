@@ -643,7 +643,7 @@ export default function AcademyHome() {
           </div>
           <p className="mt-8 text-[13px]" style={{ color: "rgba(255,255,255,0.25)" }}>
             Questions?{" "}
-            <a href="mailto:affidexacademy@gmail.com" style={{ color: "var(--gold-2)" }} className="hover:underline">affidexacademy@gmail.com</a>
+            <a href="mailto:contact@affifexacademy.com.ng" style={{ color: "var(--gold-2)" }} className="hover:underline">contact@affifexacademy.com.ng</a>
             {" · "}
             <a href="tel:+2348133985352" style={{ color: "var(--gold-2)" }} className="hover:underline">+234 813 398 5352</a>
           </p>

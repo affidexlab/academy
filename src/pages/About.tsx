@@ -238,7 +238,7 @@ export default function AcademyAbout() {
                 Contact us<br /><span className="italic" style={{ color: "var(--gold)" }}>anytime.</span>
               </h2>
               {[
-                { icon: <Mail size={15} />, label: "Email", content: <><a href="mailto:affidexacademy@gmail.com" className="hover:underline block" style={{ color: "var(--navy)" }}>affidexacademy@gmail.com</a><a href="mailto:affidexacademy@gmail.com" className="hover:underline block" style={{ color: "var(--navy)" }}>affidexacademy@gmail.com</a></> },
+                { icon: <Mail size={15} />, label: "Email", content: <><a href="mailto:contact@affifexacademy.com.ng" className="hover:underline block" style={{ color: "var(--navy)" }}>contact@affifexacademy.com.ng</a><a href="mailto:contact@affifexacademy.com.ng" className="hover:underline block" style={{ color: "var(--navy)" }}>contact@affifexacademy.com.ng</a></> },
                 { icon: <Phone size={15} />, label: "Phone / WhatsApp", content: <a href="tel:+2348133985352" className="hover:underline" style={{ color: "var(--navy)" }}>+234 813 398 5352</a> },
                 { icon: <Globe size={15} />, label: "Website", content: <a href="https://www.affidexacademy.com.ng" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{ color: "var(--navy)" }}>www.affidexacademy.com.ng</a> },
                 { icon: <Building2 size={15} />, label: "Registration", content: <span style={{ color: "var(--navy)" }}>RC: 9316934 · SMEDAN: SUID-5998-5813-3500-9105</span> },

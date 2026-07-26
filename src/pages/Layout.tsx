@@ -165,8 +165,8 @@ function Footer() {
               <li className="flex items-start gap-3">
                 <Mail size={14} className="mt-0.5 flex-shrink-0" style={{ color: "var(--gold)" }} />
                 <div>
-                  <a href="mailto:affidexacademy@gmail.com" className="hover:text-white transition-colors block">affidexacademy@gmail.com</a>
-                  <a href="mailto:affidexacademy@gmail.com" className="hover:text-white transition-colors block">affidexacademy@gmail.com</a>
+                  <a href="mailto:contact@affifexacademy.com.ng" className="hover:text-white transition-colors block">contact@affifexacademy.com.ng</a>
+                  <a href="mailto:contact@affifexacademy.com.ng" className="hover:text-white transition-colors block">contact@affifexacademy.com.ng</a>
                 </div>
               </li>
               <li className="flex items-center gap-3">
