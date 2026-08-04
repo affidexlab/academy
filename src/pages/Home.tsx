@@ -55,7 +55,7 @@ const partners = [
 const stats = [
   { value: "4+", label: "States", sub: "Akwa Ibom · Cross River · Abia · Lagos" },
   { value: "2", label: "Training Centres", sub: "Both in Uyo, Akwa Ibom State" },
-  { value: "6", label: "Programme Tracks", sub: "4–8 weeks each, fully practical" },
+  { value: "2", label: "Learning Pathways", sub: "4–8 Wk Bootcamps & 16–24 Wk TVET Initiative" },
   { value: "70%", label: "Hands-On", sub: "Lab & project-based delivery" },
 ];
 
@@ -331,9 +331,9 @@ export default function AcademyHome() {
             </h1>
 
             {/* Sub */}
-            <p className="anim-fadeup delay-200 leading-relaxed max-w-[580px]"
-              style={{ fontSize: "clamp(14px,4vw,17px)", color: "rgba(255,255,255,0.65)", marginBottom: "2.5rem" }}>
-              A Microsoft-affiliated, UNESCO-UNEVOC recognised, and federally-registered vocational institution delivering 6 practical digital skills tracks — right here in Uyo, Akwa Ibom.
+            <p className="anim-fadeup delay-200 leading-relaxed max-w-[620px]"
+              style={{ fontSize: "clamp(14px,4vw,17px)", color: "rgba(255,255,255,0.7)", marginBottom: "2.5rem" }}>
+              A Microsoft-affiliated, UNESCO-UNEVOC recognised, and federally-registered vocational institution in Uyo — offering 4–8 week intensive skill tracks and the 16–24 week NBTE FME TVET Initiative with monthly stipends.
             </p>
 
             {/* Credential pills */}
@@ -643,7 +643,7 @@ export default function AcademyHome() {
           </div>
           <p className="mt-8 text-[13px]" style={{ color: "rgba(255,255,255,0.25)" }}>
             Questions?{" "}
-            <a href="mailto:contact@affifexacademy.com.ng" style={{ color: "var(--gold-2)" }} className="hover:underline">contact@affifexacademy.com.ng</a>
+            <a href="mailto:contact@affidexacademy.com.ng" style={{ color: "var(--gold-2)" }} className="hover:underline">contact@affidexacademy.com.ng</a>
             {" · "}
             <a href="tel:+2348133985352" style={{ color: "var(--gold-2)" }} className="hover:underline">+234 813 398 5352</a>
           </p>

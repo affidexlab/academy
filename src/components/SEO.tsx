@@ -26,7 +26,7 @@ function setMetaTag(attr: "name" | "property", key: string, content: string) {
  */
 export default function SEO({ title, description, path = "", image = "/logo.png", noindex = false }: SEOProps) {
   useEffect(() => {
-    const fullUrl = `https://affidexlab.com${path}`;
+    const fullUrl = `https://affidexacademy.com.ng${path}`;
 
     document.title = title;
 
@@ -49,7 +49,37 @@ export default function SEO({ title, description, path = "", image = "/logo.png"
       document.head.appendChild(canonical);
     }
     canonical.setAttribute("href", fullUrl);
-  }, [title, description, path, image]);
+
+    // Schema.org Structured Data
+    let schemaScript = document.querySelector('script[type="application/ld+json"]');
+    if (!schemaScript) {
+      schemaScript = document.createElement("script");
+      schemaScript.setAttribute("type", "application/ld+json");
+      document.head.appendChild(schemaScript);
+    }
+    const schemaData = {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Affidex Academy",
+      "url": "https://affidexacademy.com.ng",
+      "logo": "https://affidexacademy.com.ng/logo.png",
+      "description": "Leading provider of vocational education and digital technology training in Uyo, Nigeria.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "50 Udo Udoma Avenue",
+        "addressLocality": "Uyo",
+        "addressRegion": "Akwa Ibom State",
+        "addressCountry": "NG"
+      },
+      "sameAs": [
+        "https://facebook.com",
+        "https://twitter.com",
+        "https://linkedin.com",
+        "https://instagram.com"
+      ]
+    };
+    schemaScript.textContent = JSON.stringify(schemaData);
+  }, [title, description, path, image, noindex]);
 
   return null;
 }

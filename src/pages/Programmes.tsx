@@ -1,185 +1,304 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Clock, BookOpen, CheckCircle2, Award, ChevronDown, ChevronUp, Calendar } from "lucide-react";
+import { ArrowRight, Clock, BookOpen, CheckCircle2, Award, ChevronDown, ChevronUp, Calendar, Zap, Sparkles } from "lucide-react";
 import { useState } from "react";
 import SEO from "../components/SEO";
 
-const programmes = [
+// TVET Stipends Initiative
+const tvetProgramme = {
+  id: "nbte-fme-tvet",
+  icon: "🎓",
+  logo: "https://res.cloudinary.com/dca2p5xwg/image/upload/v1785002410/tvet-only-logo_llr88h.png",
+  title: "NBTE FME TVET Initiative",
+  form: "https://forms.gle/7ooitRCJmJWBz5kv8",
+  subtitle: "Federal Ministry of Education Vocational TVET Initiative",
+  badge: "Stipend Provided (₦30,000/mo)",
+  badgeClass: "bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold",
+  startMonth: "August",
+  endMonth: "December",
+  duration: "16–24 weeks",
+  sessions: "5 days/week (5 hrs/day)",
+  level: "All Levels (Beginner to Advanced)",
+  cert: "NBTE Certificate of Competency (Government Approved)",
+  description:
+    "A comprehensive, competency-based TVET training programme under the Federal Ministry of Education and NBTE. Designed for deep workplace readiness, 90% of the training duration is dedicated to hands-on practical instruction in functional production hubs.",
+  outcomes: [
+    "Monthly trainee stipend of ₦30,000 throughout training",
+    "Full tuition (₦50,000/month value) 100% sponsored",
+    "90% practical, hands-on facility & repair hub instruction",
+    "Industry placement via production hubs or partner MCPs",
+    "Government-approved NBTE Certificate of Competency",
+  ],
+  modules: [
+    { week: "16 weeks", title: "Computer Hardware Repair & Maintenance", topics: ["Computer assembly & diagnosis", "OS & software troubleshooting", "Networking & server setup"] },
+    { week: "24 weeks", title: "Fullstack Web Development", topics: ["Frontend UI/UX & React", "Node.js, Express & Databases", "Cloud deployment & DevOps"] },
+    { week: "16 weeks", title: "Frontend Web Development", topics: ["HTML5, CSS3, Tailwind CSS", "JavaScript ES6+ & React", "Responsive design & Web APIs"] },
+    { week: "16 weeks", title: "Backend Web Development", topics: ["Node.js & Express framework", "SQL & NoSQL Database design", "API Security & Auth"] },
+    { week: "20 weeks", title: "Mobile App Development", topics: ["React Native & Flutter", "Cross-platform mobile UI", "Play Store & App Store deployment"] },
+  ],
+};
+
+// Core 4-8 Week Intensive Tracks
+const shortTracks = [
   {
-    id: "nbte-fme-tvet",
-    icon: "🎓",
-    logo: "https://res.cloudinary.com/dca2p5xwg/image/upload/v1785002410/tvet-only-logo_llr88h.png", // Replace with actual logo URL
-    title: "NBTE FME TVET",
-    form: "https://forms.gle/7ooitRCJmJWBz5kv8",
-    subtitle: "Federal Ministry of Education TVET Initiative",
-    badge: "Currently Running",
-    badgeClass: "bg-emerald-100 text-emerald-700",
-    startMonth: "August", // Customize start month
-    endMonth: "December", // Customize end month
-    duration: "16-24 weeks",
-    sessions: "5 days/week (5 hrs/day)",
-    level: "All Levels",
-    cert: "NBTE Certificate of Competency",
-    description:
-      "A competency-based, industry-driven training programme under the Federal Ministry of Education's TVET Initiative. Designed to build practical workplace readiness, 90% of the training duration is dedicated to hands-on, practical instruction in functional production and service centres.",
-    outcomes: [
-      "Monthly trainee stipend of ₦30,000",
-      "Training fee of ₦50,000 per month fully covered",
-      "Minimum 90% practical, hands-on instruction",
-      "Workplace experience via production hubs or MCP placement",
-      "Earn industry-recognized, government-approved certificates",
-    ],
-    modules: [
-      { week: "16 weeks", title: "Computer Hardware Repair & Maintenance", topics: ["Computer assembly & diagnosis", "OS & software troubleshooting", "Networking fundamentals"] },
-      { week: "24 weeks", title: "Fullstack Web Development", topics: ["Frontend UI/UX", "Backend APIs & Databases", "Cloud deployment"] },
-      { week: "16 weeks", title: "Frontend Web Development", topics: ["HTML5, CSS3, Tailwind", "JavaScript & React", "Responsive design"] },
-      { week: "16 weeks", title: "Backend Web Development", topics: ["Node.js & Express", "SQL & NoSQL", "API & Security"] },
-      { week: "20 weeks", title: "Mobile App Development", topics: ["React Native & Flutter", "Cross-platform UI", "App store submission"] },
-    ],
-  }
+    id: "digital-foundations",
+    emoji: "🖥️",
+    title: "Digital Foundations & Workplace Readiness",
+    duration: "4 weeks",
+    level: "Beginner",
+    tag: "Essential",
+    tagBg: "bg-emerald-50 text-emerald-700 border-emerald-200",
+    desc: "Computer literacy, productivity tools, internet safety, digital CV, and portfolio basics — the launchpad for every modern career.",
+    skills: ["Computer literacy & Microsoft Office", "Google Workspace & productivity tools", "Cyber hygiene & digital safety", "Digital CV & portfolio building"],
+  },
+  {
+    id: "coding-web",
+    emoji: "🧩",
+    title: "Coding, Web & Product Foundations",
+    duration: "8 weeks",
+    level: "Beginner–Intermediate",
+    tag: "High Demand",
+    tagBg: "bg-blue-50 text-blue-700 border-blue-200",
+    desc: "HTML, CSS, JavaScript fundamentals and product thinking — everything needed to build real web experiences.",
+    skills: ["HTML5, CSS3, Tailwind CSS", "JavaScript ES6+ fundamentals", "Frontend development basics", "Product thinking introduction"],
+  },
+  {
+    id: "digital-marketing",
+    emoji: "📣",
+    title: "Digital Marketing & Sales Operations",
+    duration: "6 weeks",
+    level: "Beginner",
+    tag: "Popular",
+    tagBg: "bg-purple-50 text-purple-700 border-purple-200",
+    desc: "Social media marketing, SEO, email campaigns, e-commerce operations, and freelance client acquisition on global platforms.",
+    skills: ["Social media marketing & content", "SEO & email marketing campaigns", "E-commerce operations", "Upwork & Fiverr onboarding"],
+  },
+  {
+    id: "ui-ux",
+    emoji: "🎨",
+    title: "UI/UX & Product Design",
+    duration: "6 weeks",
+    level: "Beginner–Intermediate",
+    tag: "Creative",
+    tagBg: "bg-pink-50 text-pink-700 border-pink-200",
+    desc: "Figma, user research, wireframing, prototyping, and design systems — build a world-class portfolio for employment.",
+    skills: ["Figma from scratch to advanced", "User research & personas", "Wireframing & interactive prototypes", "Design systems & portfolio"],
+  },
+  {
+    id: "data-ai",
+    emoji: "📊",
+    title: "Data & AI Productivity for Business",
+    duration: "6 weeks",
+    level: "Beginner–Intermediate",
+    tag: "Future-Ready",
+    tagBg: "bg-amber-50 text-amber-700 border-amber-200",
+    desc: "Advanced Excel, Google Sheets, data visualization, and AI tools that immediately boost business productivity.",
+    skills: ["Advanced Excel & Google Sheets", "Data visualization tools", "AI productivity & prompts", "Business data analysis"],
+  },
+  {
+    id: "ict-support",
+    emoji: "🔧",
+    title: "ICT Support, Hardware & Technical Services",
+    duration: "6 weeks",
+    level: "Beginner",
+    tag: "Highest Employment",
+    tagBg: "bg-emerald-50 text-emerald-800 border-emerald-200",
+    desc: "Hardware repair, troubleshooting, networking fundamentals, and device servicing — high immediate income potential.",
+    skills: ["Hardware repair & maintenance", "Fault diagnosis & troubleshooting", "Networking fundamentals", "Device servicing enterprise"],
+  },
 ];
 
-function ProgrammeCard({ p }: { p: (typeof programmes)[0] }) {
-  const [expanded, setExpanded] = useState(false);
-
-  return (
-    <div className="rounded-2xl border bg-white overflow-hidden hover:shadow-lg transition-shadow">
-      <div className="p-5 md:p-7 flex flex-col gap-5">
-        <div className="flex items-start justify-between gap-4 flex-wrap">
-          <div className="flex items-center gap-3">
-            {p.logo ? (
-              <img src={p.logo} alt={`${p.title} Logo`} className="w-12 h-12 object-contain" />
-            ) : (
-              <span className="text-3xl">{p.icon}</span>
-            )}
-            <div>
-              <h3 className="text-lg font-extrabold text-[#0A2540] leading-snug">{p.title}</h3>
-              <p className="text-sm text-slate-500 mt-0.5">{p.subtitle}</p>
-            </div>
-          </div>
-          <span className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold shrink-0 ${p.badgeClass}`}>
-            {p.badge}
-          </span>
-        </div>
-
-        <div className="mt-3 md:mt-4 flex flex-wrap gap-3 md:gap-4 text-sm text-slate-500">
-          <span className="flex items-center gap-1.5"><Clock size={14} />{p.duration}</span>
-          {p.startMonth && p.endMonth && (
-            <span className="flex items-center gap-1.5"><Calendar size={14} />{p.startMonth} - {p.endMonth}</span>
-          )}
-          <span className="flex items-center gap-1.5"><BookOpen size={14} />{p.sessions}</span>
-          <span className="flex items-center gap-1.5"><Award size={14} className="text-[#C9973A]" />{p.cert}</span>
-        </div>
-
-        <p className="mt-3 md:mt-4 text-sm text-slate-600 leading-relaxed">{p.description}</p>
-
-        <div className="mt-4 md:mt-5 flex flex-col gap-3">
-          <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-2.5 md:mb-3">What you'll be able to do</h4>
-          <ul className="grid gap-1.5 sm:grid-cols-2">
-            {p.outcomes.map((o, i) => (
-              <li key={i} className="flex gap-2 text-sm text-slate-600">
-                <CheckCircle2 size={14} className="mt-0.5 text-[#C9973A] shrink-0" />
-                {o}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <button
-          onClick={() => setExpanded(!expanded)}
-          className="mt-4 md:mt-5 flex items-center gap-1.5 text-sm font-semibold text-[#0A2540] hover:text-[#C9973A] transition-colors"
-        >
-          {expanded ? <><ChevronUp size={16} />Hide available tracks</> : <><ChevronDown size={16} />View available tracks</>}
-        </button>
-      </div>
-
-      {expanded && (
-        <div className="border-t bg-slate-50 px-5 md:px-7 py-5 flex flex-col gap-4">
-          <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-400">Programme Tracks</h4>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {p.modules.map((m, i) => (
-              <div key={i} className="rounded-xl border bg-white p-4 flex flex-col gap-3">
-                <div className="text-xs font-bold text-[#C9973A] mb-1">{m.week}</div>
-                <div className="text-sm font-semibold text-[#0A2540] mb-2">{m.title}</div>
-                <ul className="flex flex-col gap-2">
-                  {m.topics.map((t, j) => (
-                    <li key={j} className="flex items-center gap-1.5 text-xs text-slate-500">
-                      <span className="h-1 w-1 rounded-full bg-slate-400 shrink-0" />
-                      {t}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      <div className="border-t px-5 md:px-7 py-4 bg-white flex items-center justify-between flex-wrap gap-3">
-        <span className="text-sm font-semibold text-[#0A2540]">Level: {p.level}</span>
-        <a
-          href={p.form}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 rounded-full bg-[#0A2540] px-4 py-2 text-xs font-bold text-white hover:bg-[#0d2e52] transition-colors"
-        >
-          Apply for this programme
-          <ArrowRight size={13} />
-        </a>
-      </div>
-    </div>
-  );
-}
-
 export default function AcademyProgrammes() {
+  const [expandedTvet, setExpandedTvet] = useState(true);
+
   return (
-    <div>
+    <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
       <SEO
-        title="Programmes — Affidex Academy"
-        description="Explore Affidex Academy's NBTE-approved training programmes in Uyo, including the NBTE FME TVET programme."
+        title="Training Programmes — Affidex Academy"
+        description="Explore Affidex Academy's TVET Initiative and intensive digital skill tracks in Uyo. 100% free training, NBTE approved credentials, and stipends for TVET trainees."
         path="/programmes"
       />
+
       {/* Hero */}
-      <section className="bg-[#0A2540] py-12 md:py-20">
-        <div className="container text-center text-white">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[#C9973A] mb-3">Our Programmes</p>
-          <h1 className="text-4xl font-extrabold md:text-5xl">Our Active Programmes.</h1>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-slate-300">
-            Every programme at Affidex Academy is built around real-world skills, employer demand, and zero cost to you. Pick your track and apply today.
+      <section className="bg-[#0A2540] py-16 md:py-24 text-white">
+        <div className="container flex flex-col gap-4">
+          <p className="text-xs font-bold uppercase tracking-widest text-[#C9973A] mb-3">Our Training Streams</p>
+          <h1 className="text-4xl font-extrabold md:text-5xl">Industry-Driven Vocational Programmes</h1>
+          <p className="mt-4 text-base md:text-lg text-slate-300">
+            Affidex Academy offers two flexible pathways to build income-generating technical skills: the comprehensive 16–24 week NBTE TVET Initiative (with stipends) and 4–8 week intensive skill tracks.
           </p>
         </div>
       </section>
 
-      {/* Quick pick */}
+      {/* Overview bar */}
       <section className="bg-slate-50 border-b py-6">
+        <div className="container flex flex-wrap gap-4 justify-center text-sm font-semibold text-[#0A2540]">
+          <span className="flex items-center gap-2 bg-white px-4 py-2 rounded-full border shadow-sm">
+            <Sparkles size={16} className="text-[#C9973A]" /> 100% Free Tuition — Zero Hidden Charges
+          </span>
+          <span className="flex items-center gap-2 bg-white px-4 py-2 rounded-full border shadow-sm">
+            <Award size={16} className="text-[#C9973A]" /> Government Approved NBTE & Affidex Certificates
+          </span>
+          <span className="flex items-center gap-2 bg-white px-4 py-2 rounded-full border shadow-sm">
+            <Zap size={16} className="text-[#C9973A]" /> 70%+ Hands-on Practical Instruction
+          </span>
+        </div>
+      </section>
+
+      {/* Stream 1: NBTE TVET Initiative */}
+      <section className="py-12 md:py-16 bg-white">
         <div className="container">
-          <div className="flex flex-wrap gap-3 justify-center">
-            {programmes.map((p) => (
-              <a
-                key={p.id}
-                href={`#${p.id}`}
-                className="inline-flex items-center gap-2 rounded-full border bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:border-[#0A2540] hover:text-[#0A2540] transition-colors"
+          <div className="mb-8">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#C9973A]">Pathway 1</span>
+            <h2 className="text-2xl md:text-3xl font-extrabold text-[#0A2540] mt-1">
+              NBTE FME TVET Initiative (16–24 Weeks)
+            </h2>
+            <p className="text-sm text-slate-600 mt-2 max-w-3xl">
+              A government-supported long-term vocational initiative providing comprehensive technical training, ₦30,000 monthly stipends, and workplace immersion.
+            </p>
+          </div>
+
+          <div className="rounded-2xl border bg-white overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <div className="p-6 md:p-8 flex flex-col gap-6">
+              <div className="flex items-start justify-between gap-4 flex-wrap">
+                <div className="flex items-center gap-4">
+                  <img src={tvetProgramme.logo} alt="TVET Logo" className="w-14 h-14 object-contain" />
+                  <div>
+                    <h3 className="text-xl font-extrabold text-[#0A2540]">{tvetProgramme.title}</h3>
+                    <p className="text-sm text-slate-500 mt-0.5">{tvetProgramme.subtitle}</p>
+                  </div>
+                </div>
+                <span className={`inline-flex items-center rounded-full px-3.5 py-1.5 text-xs font-bold shrink-0 ${tvetProgramme.badgeClass}`}>
+                  {tvetProgramme.badge}
+                </span>
+              </div>
+
+              <div className="flex flex-wrap gap-4 text-sm text-slate-600">
+                <span className="flex items-center gap-1.5 font-semibold"><Clock size={15} />{tvetProgramme.duration}</span>
+                <span className="flex items-center gap-1.5"><Calendar size={15} />{tvetProgramme.startMonth} - {tvetProgramme.endMonth}</span>
+                <span className="flex items-center gap-1.5"><BookOpen size={15} />{tvetProgramme.sessions}</span>
+                <span className="flex items-center gap-1.5 text-[#0A2540] font-bold"><Award size={15} className="text-[#C9973A]" />{tvetProgramme.cert}</span>
+              </div>
+
+              <p className="text-sm text-slate-600 leading-relaxed">{tvetProgramme.description}</p>
+
+              <div className="flex flex-col gap-3">
+                <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400">Programme Benefits & Financial Support</h4>
+                <ul className="grid gap-2 sm:grid-cols-2">
+                  {tvetProgramme.outcomes.map((o, i) => (
+                    <li key={i} className="flex gap-2 text-sm text-slate-700">
+                      <CheckCircle2 size={16} className="mt-0.5 text-[#C9973A] shrink-0" />
+                      {o}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <button
+                onClick={() => setExpandedTvet(!expandedTvet)}
+                className="flex items-center gap-1.5 text-sm font-bold text-[#0A2540] hover:text-[#C9973A] transition-colors self-start mt-2"
               >
-                {p.logo ? (
-                  <img src={p.logo} alt="" className="w-5 h-5 object-contain" />
-                ) : (
-                  <span>{p.icon}</span>
-                )}
-                {p.title}
+                {expandedTvet ? <><ChevronUp size={16} /> Hide Specialized TVET Tracks</> : <><ChevronDown size={16} /> View 5 Specialized TVET Tracks</>}
+              </button>
+            </div>
+
+            {expandedTvet && (
+              <div className="border-t bg-slate-50 p-6 md:p-8 flex flex-col gap-4">
+                <h4 className="text-xs font-bold uppercase tracking-widest text-slate-500">Available TVET Tracks</h4>
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {tvetProgramme.modules.map((m, i) => (
+                    <div key={i} className="rounded-xl border bg-white p-5 flex flex-col gap-2 shadow-xs">
+                      <div className="text-xs font-extrabold text-[#C9973A]">{m.week}</div>
+                      <div className="text-sm font-bold text-[#0A2540]">{m.title}</div>
+                      <ul className="mt-2 space-y-1.5">
+                        {m.topics.map((t, j) => (
+                          <li key={j} className="flex items-center gap-2 text-xs text-slate-600">
+                            <span className="h-1.5 w-1.5 rounded-full bg-[#0A2540] shrink-0" />
+                            {t}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className="border-t px-6 py-4 bg-white flex items-center justify-between flex-wrap gap-4">
+              <span className="text-sm font-bold text-[#0A2540]">Target Applicants: All Levels</span>
+              <a
+                href={tvetProgramme.form}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-[#0A2540] px-6 py-2.5 text-xs font-bold text-white hover:bg-[#0d2e52] transition-colors"
+              >
+                Apply for TVET Initiative
+                <ArrowRight size={14} />
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stream 2: 4-8 Week Intensive Skill Tracks */}
+      <section className="py-12 md:py-16 bg-slate-50 border-t">
+        <div className="container">
+          <div className="mb-8">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#C9973A]">Pathway 2</span>
+            <h2 className="text-2xl md:text-3xl font-extrabold text-[#0A2540] mt-1">
+              Intensive Skill Tracks (4–8 Weeks)
+            </h2>
+            <p className="text-sm text-slate-600 mt-2 max-w-3xl">
+              Short-term, high-impact bootcamp tracks focused on practical tools, project portfolios, and immediate freelance or employment readiness.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {shortTracks.map((st) => (
+              <div key={st.id} className="rounded-2xl border bg-white p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-4">
+                    <span className="text-3xl">{st.emoji}</span>
+                    <span className={`text-[11px] font-extrabold px-3 py-1 rounded-full border ${st.tagBg}`}>
+                      {st.tag}
+                    </span>
+                  </div>
+                  <h3 className="text-base font-extrabold text-[#0A2540] leading-snug mb-2">{st.title}</h3>
+                  <div className="flex items-center gap-2 text-xs text-slate-500 mb-3 font-semibold">
+                    <Clock size={13} /> {st.duration} · {st.level}
+                  </div>
+                  <p className="text-xs text-slate-600 leading-relaxed mb-4">{st.desc}</p>
+                  <ul className="space-y-1.5 mb-6">
+                    {st.skills.map((sk, j) => (
+                      <li key={j} className="flex items-start gap-2 text-xs text-slate-700">
+                        <CheckCircle2 size={13} className="text-[#C9973A] mt-0.5 shrink-0" />
+                        {sk}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <Link
+                  to="/contact"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#0A2540] py-2.5 text-xs font-bold text-[#0A2540] hover:bg-[#0A2540] hover:text-white transition-colors"
+                >
+                  Apply for this track <ArrowRight size={13} />
+                </Link>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Programme cards */}
-      <section className="bg-white py-10 md:py-16">
-        <div className="container">
-          <div className="flex flex-col gap-8">
-            {programmes.map((p) => (
-              <div id={p.id} key={p.id} className="scroll-mt-20">
-                <ProgrammeCard p={p} />
-              </div>
-            ))}
+      {/* CTA */}
+      <section className="bg-[#0A2540] py-14 text-white text-center">
+        <div className="container max-w-2xl mx-auto space-y-4">
+          <h2 className="text-2xl md:text-3xl font-extrabold">Unsure which stream fits you?</h2>
+          <p className="text-sm text-slate-300">
+            Reach out to our admissions advisors or fill out our simple application form to get guidance on picking your track.
+          </p>
+          <div className="pt-2 flex justify-center gap-4">
+            <Link to="/contact" className="btn-gold rounded-full px-8 py-3 text-xs font-bold inline-flex items-center gap-2">
+              Apply / Contact Us <ArrowRight size={14} />
+            </Link>
           </div>
         </div>
       </section>

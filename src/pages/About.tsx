@@ -51,7 +51,7 @@ export default function AcademyAbout() {
             Built to close Nigeria's{" "}
             <span className="italic" style={{ color: "var(--gold-2)" }}>digital skills gap.</span>
           </h1>
-          <p className="text-[17px] leading-relaxed mb-8 max-w-[600px]" style={{ color: "rgba(255,255,255,0.6)" }}>
+          <p className="text-[17px] leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.6)" }}>
             Affidex Academy Limited is a federally registered vocational and digital skills institution headquartered in Uyo, Akwa Ibom State, Nigeria. We exist to build sustainable employability, enterprise development, and income pathways for youth and women across Southern Nigeria through practical, internationally-aligned technology and vocational training.
           </p>
           <div className="flex flex-wrap gap-2">
@@ -238,7 +238,7 @@ export default function AcademyAbout() {
                 Contact us<br /><span className="italic" style={{ color: "var(--gold)" }}>anytime.</span>
               </h2>
               {[
-                { icon: <Mail size={15} />, label: "Email", content: <><a href="mailto:contact@affifexacademy.com.ng" className="hover:underline block" style={{ color: "var(--navy)" }}>contact@affifexacademy.com.ng</a><a href="mailto:contact@affifexacademy.com.ng" className="hover:underline block" style={{ color: "var(--navy)" }}>contact@affifexacademy.com.ng</a></> },
+                { icon: <Mail size={15} />, label: "Email", content: <><a href="mailto:contact@affidexacademy.com.ng" className="hover:underline block" style={{ color: "var(--navy)" }}>contact@affidexacademy.com.ng</a><a href="mailto:affidexacademy@gmail.com" className="hover:underline block text-xs mt-0.5" style={{ color: "var(--text-light)" }}>affidexacademy@gmail.com</a></> },
                 { icon: <Phone size={15} />, label: "Phone / WhatsApp", content: <a href="tel:+2348133985352" className="hover:underline" style={{ color: "var(--navy)" }}>+234 813 398 5352</a> },
                 { icon: <Globe size={15} />, label: "Website", content: <a href="https://www.affidexacademy.com.ng" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{ color: "var(--navy)" }}>www.affidexacademy.com.ng</a> },
                 { icon: <Building2 size={15} />, label: "Registration", content: <span style={{ color: "var(--navy)" }}>RC: 9316934 · SMEDAN: SUID-5998-5813-3500-9105</span> },

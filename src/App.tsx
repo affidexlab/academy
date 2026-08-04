@@ -10,6 +10,8 @@ const Home = lazy(() => import("./pages/Home"));
 const Programmes = lazy(() => import("./pages/Programmes"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const TermsConditions = lazy(() => import("./pages/TermsConditions"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 function PageLoader() {
@@ -44,6 +46,9 @@ export default function App() {
             <Route path="programmes" element={<Programmes />} />
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="terms-and-conditions" element={<TermsConditions />} />
+            <Route path="terms-conditions" element={<TermsConditions />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
