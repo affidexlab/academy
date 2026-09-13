@@ -368,6 +368,10 @@ export default function AcademyHome() {
                 className="btn-ghost inline-flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-full px-9 py-4 text-[15px]">
                 Explore Programmes
               </Link>
+              <Link to="/corporate-government"
+                className="btn-ghost inline-flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-full px-9 py-4 text-[15px]">
+                Partner With Us
+              </Link>
             </div>
 
 
@@ -430,6 +434,34 @@ export default function AcademyHome() {
                   <div className="text-[10px] mt-0.5 font-semibold" style={{ color: "#4ADE80" }}>✓ Confirmed</div>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* ═══════════════ VISITOR JOURNEYS ═══════════════════════════ */}
+      <section className="py-16 md:py-24" style={{ background: "#FFFFFF", borderTop: "1px solid var(--border)" }}>
+        <div className="container flex flex-col gap-10">
+          <div className="mb-8 md:mb-12">
+            <div className="label justify-center mb-5">Find Your Path</div>
+            <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(2.2rem,4vw,3.4rem)", fontWeight: 700, lineHeight: 1.12, color: "var(--navy)" }}>
+              Four audiences.<br />
+              <span className="italic" style={{ color: "var(--gold)" }}>One practical delivery engine.</span>
+            </h2>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { title: "I want to learn", body: "Choose a programme, see duration, join a cohort, and build portfolio-backed skills.", to: "/programmes", cta: "View programmes" },
+              { title: "I represent a company", body: "Request workforce training, staff upskilling, consultancy, or technical procurement support.", to: "/corporate-government", cta: "Corporate support" },
+              { title: "I represent government/NGO/donor", body: "Partner on TVET delivery, youth employment, women empowerment, and community skills programmes.", to: "/corporate-government", cta: "Partner with us" },
+              { title: "I need equipment/services", body: "Request ICT, GSM, creative media, office technology, or workshop equipment supply and setup.", to: "/contact", cta: "Request a quote" },
+            ].map((item) => (
+              <Link key={item.title} to={item.to} className="card rounded-2xl border bg-white p-6 flex flex-col gap-3 hover:no-underline" style={{ borderColor: "var(--border)" }}>
+                <h3 className="text-[15px] font-extrabold" style={{ color: "var(--navy)" }}>{item.title}</h3>
+                <p className="text-[13px] leading-relaxed flex-1" style={{ color: "var(--text-mid)" }}>{item.body}</p>
+                <span className="inline-flex items-center gap-2 text-[12px] font-bold" style={{ color: "var(--gold)" }}>{item.cta}<ArrowRight size={13} /></span>
+              </Link>
             ))}
           </div>
         </div>
@@ -531,6 +563,30 @@ export default function AcademyHome() {
               className="inline-flex items-center gap-2 text-[13.5px] font-bold hover:underline" style={{ color: "var(--navy)" }}>
               View full curriculum details <ArrowRight size={15} />
             </Link>
+          </div>
+        </div>
+      </section>
+
+
+      {/* ═══════════════ PRACTICAL MODEL ═════════════════════════════ */}
+      <section className="py-16 md:py-24" style={{ background: "#FFFFFF", borderTop: "1px solid var(--border)" }}>
+        <div className="container grid gap-10 md:grid-cols-[0.9fr_1.1fr] items-center">
+          <div>
+            <div className="label mb-5">Our Learning Model</div>
+            <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(2.2rem,4vw,3.4rem)", fontWeight: 700, lineHeight: 1.12, color: "var(--navy)" }}>
+              70% practical.<br />
+              <span className="italic" style={{ color: "var(--gold)" }}>30% guided theory.</span>
+            </h2>
+            <p className="mt-5 text-[15px] leading-relaxed" style={{ color: "var(--text-mid)" }}>Students learn through laboratory work, workshops, projects, assessments, mentorship, and portfolio evidence so training connects directly to employability, enterprise, and income.</p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {[{ n: "70%", t: "Hands-on", b: "Labs · Workshops · Projects · Production-style practice" }, { n: "30%", t: "Guided theory", b: "Instruction · Assessment · Mentorship · Standards" }].map((item) => (
+              <div key={item.n} className="rounded-2xl border p-8 text-center" style={{ borderColor: "var(--border)", background: "var(--cream)" }}>
+                <div className="font-black mb-3" style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "4rem", color: "var(--gold)", lineHeight: 1 }}>{item.n}</div>
+                <h3 className="font-extrabold mb-2" style={{ color: "var(--navy)" }}>{item.t}</h3>
+                <p className="text-[13px] leading-relaxed" style={{ color: "var(--text-mid)" }}>{item.b}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

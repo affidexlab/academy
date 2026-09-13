@@ -19,6 +19,7 @@ function Navbar() {
     { to: "", label: "Home" },
     { to: "/programmes", label: "Programmes" },
     { to: "/about", label: "About" },
+    { to: "/corporate-government", label: "Partners" },
   ];
   const isActive = (to: string) => to === "" ? pathname === "" : pathname.startsWith(to);
 
@@ -142,7 +143,7 @@ function Footer() {
           <div className="flex flex-col gap-2">
             <h4 className="label mb-4 md:mb-6">Navigation</h4>
             <ul className="space-y-2 md:space-y-3 text-[13.5px] flex flex-col gap-2" style={{ color: "#7A8FA6" }}>
-              {[["Home", ""], ["Programmes", "/programmes"], ["About Us", "/about"], ["Contact Us", "/contact"]].map(([l, t]) => (
+              {[["Home", ""], ["Programmes", "/programmes"], ["About Us", "/about"], ["Corporate/Government", "/corporate-government"], ["Accreditations", "/partnerships-accreditations"], ["Contact Us", "/contact"]].map(([l, t]) => (
                 <li key={t}><Link to={t} className="hover:text-white transition-colors">{l}</Link></li>
               ))}
             </ul>

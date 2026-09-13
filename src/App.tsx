@@ -10,6 +10,8 @@ const Home = lazy(() => import("./pages/Home"));
 const Programmes = lazy(() => import("./pages/Programmes"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
+const Corporate = lazy(() => import("./pages/Corporate"));
+const Partnerships = lazy(() => import("./pages/Partnerships"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsConditions = lazy(() => import("./pages/TermsConditions"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -45,6 +47,8 @@ export default function App() {
             <Route index element={<Home />} />
             <Route path="programmes" element={<Programmes />} />
             <Route path="about" element={<About />} />
+            <Route path="corporate-government" element={<Corporate />} />
+            <Route path="partnerships-accreditations" element={<Partnerships />} />
             <Route path="contact" element={<Contact />} />
             <Route path="privacy-policy" element={<PrivacyPolicy />} />
             <Route path="terms-and-conditions" element={<TermsConditions />} />
