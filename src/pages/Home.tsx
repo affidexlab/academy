@@ -663,6 +663,54 @@ export default function AcademyHome() {
         </div>
       </section>
 
+
+      {/* ═══════════════ FACILITIES EXPERIENCE ══════════════════════ */}
+      <section className="py-16 md:py-24" style={{ background: "var(--cream)", borderTop: "1px solid var(--border)" }}>
+        <div className="container flex flex-col gap-10">
+          <div className="mb-8 md:mb-12">
+            <div className="label justify-center mb-5">Facilities & Training Experience</div>
+            <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(2.2rem,4vw,3.4rem)", fontWeight: 700, lineHeight: 1.12, color: "var(--navy)" }}>
+              Real workshops, real labs,<br />
+              <span className="italic" style={{ color: "var(--gold)" }}>real practice.</span>
+            </h2>
+            <p className="mt-5 text-[15px] leading-relaxed" style={{ color: "var(--text-mid)" }}>The company profile documents ICT and digital labs, computer hardware benches, GSM repair stations, photography equipment, automobile workshops, mechatronics labs, welding/fabrication workshops, hostel support, and safe administrative learning spaces.</p>
+          </div>
+          <div className="grid gap-5 md:grid-cols-3">
+            {[
+              { title: "ICT, Coding & Hardware Labs", body: "Computer labs, digital design stations, hardware repair workstations, networking practice, operating-system installation, data recovery, and portfolio project work." },
+              { title: "GSM, Creative Media & Office Technology", body: "Mobile-device servicing tools, rework stations, photography lighting, editing workflows, and office productivity equipment for business-ready skills." },
+              { title: "Technical & Vocational Workshops", body: "Automobile diagnostics, mechatronics, electrical installation, welding, fabrication, vehicle body building, vulcanizing, solar, EV, and CNG training environments." },
+            ].map((item) => (
+              <div key={item.title} className="card rounded-2xl border bg-white p-6" style={{ borderColor: "var(--border)" }}>
+                <h3 className="text-[15px] font-extrabold mb-3" style={{ color: "var(--navy)" }}>{item.title}</h3>
+                <p className="text-[13.5px] leading-relaxed" style={{ color: "var(--text-mid)" }}>{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════ IMPACT PROOF ═══════════════════════════════ */}
+      <section className="py-16 md:py-24" style={{ background: "#FFFFFF", borderTop: "1px solid var(--border)" }}>
+        <div className="container grid gap-10 md:grid-cols-[0.9fr_1.1fr] items-start">
+          <div>
+            <div className="label mb-5">Impact & Proof</div>
+            <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(2.2rem,4vw,3.4rem)", fontWeight: 700, lineHeight: 1.12, color: "var(--navy)" }}>
+              Income, businesses, and lives changed —<br />
+              <span className="italic" style={{ color: "var(--gold)" }}>not certificates alone.</span>
+            </h2>
+            <p className="mt-5 text-[15px] leading-relaxed" style={{ color: "var(--text-mid)" }}>We only publish numbers when they are documented. As cohorts mature, this section will hold verified student outcomes, women reached, graduate income stories, businesses launched, NYSC/cohort outcomes, testimonials, and partner case studies.</p>
+          </div>
+          <div className="rounded-2xl border p-6 md:p-8" style={{ borderColor: "var(--border)", background: "var(--cream)" }}>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {["Students trained", "Women reached", "Graduates earning income", "Businesses launched", "Corporate clients served", "Government programmes delivered", "Partner outcomes", "Case studies & testimonials"].map((item) => (
+                <div key={item} className="flex items-start gap-2.5 text-[13.5px]" style={{ color: "var(--text-mid)" }}><CheckCircle2 size={15} className="mt-0.5 flex-shrink-0" style={{ color: "var(--gold)" }} />{item}</div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ═══════════════ TWO CENTRES ═════════════════════════════════ */}
       <section className="py-28" style={{ background: "#FFFFFF", borderTop: "1px solid var(--border)" }}>
         <div className="container flex flex-col gap-10">
@@ -743,6 +791,11 @@ export default function AcademyHome() {
               style={{ paddingTop: "18px", paddingBottom: "18px" }}>
               Learn More About Us
             </Link>
+            <a href="/affidex-academy-company-profile.docx"
+              className="btn-ghost inline-flex items-center justify-center gap-2.5 rounded-full px-11 text-[15px]"
+              style={{ paddingTop: "18px", paddingBottom: "18px" }}>
+              Download Company Profile
+            </a>
           </div>
           <p className="mt-8 text-[13px]" style={{ color: "rgba(255,255,255,0.25)" }}>
             Questions?{" "}

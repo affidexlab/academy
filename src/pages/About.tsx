@@ -199,6 +199,30 @@ export default function AcademyAbout() {
         </div>
       </section>
 
+
+      {/* ══ GOVERNANCE ═══════════════════════════════════════════════ */}
+      <section className="py-12 md:py-24" style={{ background: "var(--cream)", borderBottom: "1px solid var(--border)" }}>
+        <div className="container flex flex-col gap-10">
+          <div className="label mb-5">Leadership & Governance</div>
+          <h2 className="mb-10 md:mb-16 max-w-2xl" style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(2rem,3.5vw,3rem)", fontWeight: 700, lineHeight: 1.15, color: "var(--navy)" }}>
+            Oversight, management, compliance,<br /><span className="italic" style={{ color: "var(--gold)" }}>and delivery accountability.</span>
+          </h2>
+          <div className="grid gap-5 md:grid-cols-2 max-w-[1000px]">
+            {[
+              { title: "Board & Corporate Oversight", body: "The Board of Directors sets strategic direction, approves major policies and budgets, and ensures statutory compliance, supported by company secretarial/legal advisory and audit functions." },
+              { title: "Executive Management", body: "The Managing Director/CEO implements board policy and manages operations through functional heads responsible for technical training, finance/commercial operations, registry, administration, HR, student affairs, and HSE." },
+              { title: "Training Supervision", body: "Supervisors across digital, automotive, mechatronics, welding, fabrication, GSM, hardware, creative, and office-technology areas coordinate instructors, assistants, and workshop delivery." },
+              { title: "Support & Compliance Units", body: "Legal and compliance, public relations and marketing, certification and post-training services, internship/job placement, and student affairs support the full learner and partner lifecycle." },
+            ].map((item) => (
+              <div key={item.title} className="card rounded-2xl border bg-white p-5 md:p-7" style={{ borderColor: "var(--border)" }}>
+                <h3 className="text-[15px] font-bold mb-2.5" style={{ color: "var(--navy)" }}>{item.title}</h3>
+                <p className="text-[13.5px] leading-relaxed" style={{ color: "var(--text-mid)" }}>{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ══ AFFILIATIONS LOGOS ══════════════════════════════════════ */}
       <section className="py-12 md:py-24" style={{ background: "var(--cream)", borderBottom: "1px solid var(--border)" }}>
         <div className="container flex flex-col gap-10">
