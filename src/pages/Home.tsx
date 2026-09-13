@@ -139,6 +139,28 @@ const serviceLines = [
 ];
 
 
+const testimonials = [
+  {
+    label: "TVET Graduate",
+    quote: "Before joining Affidex Academy’s TVET programme, I had interest in technical skills but no clear pathway to turn it into income. The training was practical from the first week, with real tools, guided projects, and instructors who made sure we understood both the technical work and the business side. By the end of the programme, I had confidence, portfolio evidence, and a clear direction for employment and self-employment. Affidex did not just give me a certificate; they helped me build a skill I can earn from.",
+    name: "Princess Peace",
+    role: "TVET Programme Graduate",
+  },
+  {
+    label: "Corporate Training",
+    quote: "Affidex Academy delivered a well-structured corporate training programme for our team, and the impact was immediate. The sessions were practical, relevant to our operational needs, and handled with strong professionalism from planning to delivery. What stood out most was their ability to translate technical knowledge into workplace-ready skills our staff could apply immediately. Affidex is not just a training provider; they are a reliable workforce-development partner.",
+    name: "Gideon",
+    role: "Head of Marketing, DecaFlow Solutions Ltd",
+  },
+  {
+    label: "Procurement Delivery",
+    quote: "We engaged Affidex Academy for procurement and supply support, and they delivered exactly what was required. The process was transparent, timely, and professionally managed, from sourcing to delivery and post-supply guidance. Their understanding of training equipment and institutional needs made the project easier for us, because they supplied solutions that matched practical use, not just items on a list. We would confidently work with Affidex again.",
+    name: "DecaFlow Ltd",
+    role: "Procurement & Supply Client",
+  },
+];
+
+
 function TeamSlider() {
   const [current, setCurrent] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
@@ -763,6 +785,39 @@ export default function AcademyHome() {
 
       {/* ═══════════════ LEADERSHIP TEAM ════════════════════════════ */}
       <TeamSlider />
+
+
+      {/* ═══════════════ TESTIMONIALS ═══════════════════════════════ */}
+      <section className="py-16 md:py-24 overflow-hidden" style={{ background: "var(--navy)", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+        <div className="container flex flex-col gap-10">
+          <div className="mb-8 md:mb-12">
+            <div className="label justify-center mb-5" style={{ color: "var(--gold)" }}>Testimonials</div>
+            <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(2.2rem,4vw,3.4rem)", fontWeight: 700, lineHeight: 1.12, color: "#FFFFFF" }}>
+              Proof across training, corporate delivery,<br />
+              <span className="italic" style={{ color: "var(--gold-2)" }}>and procurement support.</span>
+            </h2>
+          </div>
+        </div>
+        <div className="relative">
+          <div className="absolute left-0 top-0 bottom-0 w-20 md:w-36 z-10 pointer-events-none" style={{ background: "linear-gradient(to right,var(--navy),transparent)" }} />
+          <div className="absolute right-0 top-0 bottom-0 w-20 md:w-36 z-10 pointer-events-none" style={{ background: "linear-gradient(to left,var(--navy),transparent)" }} />
+          <div className="ticker-inner items-stretch">
+            {[...testimonials, ...testimonials].map((item, i) => (
+              <article key={i} className="mx-3 flex w-[86vw] max-w-[560px] flex-shrink-0 flex-col rounded-2xl border p-6 md:p-8" style={{ borderColor: "rgba(255,255,255,0.11)", background: "rgba(255,255,255,0.055)" }}>
+                <div className="mb-5 flex items-center justify-between gap-4">
+                  <span className="rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-[0.14em]" style={{ background: "rgba(200,146,42,0.16)", color: "var(--gold-2)", border: "1px solid rgba(200,146,42,0.28)" }}>{item.label}</span>
+                  <span className="text-4xl leading-none" style={{ color: "rgba(200,146,42,0.45)", fontFamily: "'Cormorant Garamond',serif" }}>“</span>
+                </div>
+                <p className="flex-1 text-[13.5px] md:text-[14.5px] leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>{item.quote}</p>
+                <div className="mt-7 border-t pt-5" style={{ borderColor: "rgba(255,255,255,0.09)" }}>
+                  <h3 className="text-[14px] font-extrabold text-white">{item.name}</h3>
+                  <p className="mt-1 text-[12px] font-semibold" style={{ color: "var(--gold-2)" }}>{item.role}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ═══════════════ FINAL CTA ═══════════════════════════════════ */}
       <section className="relative overflow-hidden noise-overlay py-28"
