@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2, BookOpen, Star, MapPin, Zap, Shield, Target, BarChart3, Wifi, Users, TrendingUp, Layers, Code2, Monitor, Award, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, CheckCircle2, BookOpen, MapPin, Zap, Shield, Target, Wifi, Users, Award, BriefcaseBusiness, Truck, GraduationCap } from "lucide-react";
 import { CEO_PHOTO } from "../assets/logos";
 import { GLORY_PHOTO, EDIDIONG_PHOTO, EDIKAN_PHOTO } from "../assets/team_photos";
 import SEO from "../components/SEO";
@@ -55,40 +55,40 @@ const partners = [
 const stats = [
   { value: "4+", label: "States", sub: "Akwa Ibom · Cross River · Abia · Lagos" },
   { value: "2", label: "Training Centres", sub: "Both in Uyo, Akwa Ibom State" },
-  { value: "2", label: "Learning Pathways", sub: "4–8 Wk Bootcamps & 16–24 Wk TVET Initiative" },
-  { value: "70%", label: "Hands-On", sub: "Lab & project-based delivery" },
+  { value: "3", label: "Service Lines", sub: "Training · Consultancy · Supply" },
+  { value: "16+", label: "Programme Areas", sub: "Digital, automotive, energy & creative trades" },
 ];
 
 const programmes = [
   {
-    emoji: "🖥️", title: "Digital Foundations & Workplace Readiness", weeks: 4, level: "Beginner", tag: "Foundation", tagBg: "#E8F5E9", tagC: "#2E7D32",
-    desc: "Computer literacy, productivity tools, internet safety, digital CV, and portfolio basics — the launchpad for every other track.",
-    skills: ["Computer literacy & Microsoft Office", "Google Workspace & productivity tools", "Internet safety & cyber hygiene", "Digital CV & portfolio building"]
+    emoji: "🚗", title: "Automobile Maintenance & Auto-Mechatronics", weeks: "16–24", level: "Beginner–Advanced", tag: "Technical Trade", tagBg: "#E8F5E9", tagC: "#2E7D32",
+    desc: "Diagnostics, servicing, repairs, sensors, actuators, hybrid systems, and modern automotive electronic systems for workshop-ready technicians.",
+    skills: ["Engine diagnostics & servicing", "Auto electrical/electronic systems", "Hybrid and sensor systems", "Workshop safety & customer service"]
   },
   {
-    emoji: "🧩", title: "Coding, Web & Product Foundations", weeks: 8, level: "Beginner–Intermediate", tag: "High Demand", tagBg: "#E3F2FD", tagC: "#1565C0",
-    desc: "HTML, CSS, JavaScript fundamentals and product thinking — everything needed to build real web experiences and think like a product developer.",
-    skills: ["HTML5, CSS3, Tailwind CSS", "JavaScript fundamentals", "Frontend development basics", "Product thinking introduction"]
+    emoji: "⚡", title: "Electrical, Solar, EV & CNG Systems", weeks: "16–24", level: "Beginner–Intermediate", tag: "Energy", tagBg: "#FFF3E0", tagC: "#E65100",
+    desc: "Practical installation, maintenance, and safety training for electrical systems, solar PV, electric vehicles, and CNG conversion support.",
+    skills: ["Electrical installation & fault detection", "Solar PV design and installation", "EV assembly, diagnostics & maintenance", "CNG conversion kit maintenance"]
   },
   {
-    emoji: "📣", title: "Digital Marketing & Sales Operations", weeks: 6, level: "Beginner", tag: "Popular", tagBg: "#F3E5F5", tagC: "#7B1FA2",
-    desc: "Social media marketing, SEO, email campaigns, e-commerce operations, and freelance client acquisition on global platforms.",
-    skills: ["Social media marketing & content", "SEO and email marketing", "E-commerce operations", "Upwork & Fiverr onboarding"]
+    emoji: "🛠️", title: "Welding, Fabrication & Vehicle Body Works", weeks: "16–24", level: "Beginner–Advanced", tag: "Industrial", tagBg: "#ECEFF1", tagC: "#37474F",
+    desc: "Structured trade training in welding, fabrication, vehicle body building, vulcanizing, and production-hub work standards.",
+    skills: ["Structural and pipe welding", "Fabrication workshop practice", "Vehicle body building", "Vulcanizing and repair operations"]
   },
   {
-    emoji: "🎨", title: "UI/UX & Product Design", weeks: 6, level: "Beginner–Intermediate", tag: "Creative", tagBg: "#FCE4EC", tagC: "#C2185B",
-    desc: "Figma, user research, wireframing, prototyping, and design systems — build a world-class portfolio for freelance or employment.",
-    skills: ["Figma from scratch to advanced", "User research & personas", "Wireframing & prototyping", "Portfolio & design systems"]
+    emoji: "🧩", title: "Web Development, Coding & Product Foundations", weeks: "8–24", level: "Beginner–Intermediate", tag: "Digital", tagBg: "#E3F2FD", tagC: "#1565C0",
+    desc: "HTML, CSS, JavaScript, Git/GitHub, React foundations, product thinking, and deployment of live professional web projects.",
+    skills: ["HTML5, CSS3, Tailwind CSS", "JavaScript and React basics", "Git/GitHub workflow", "Portfolio-ready deployments"]
   },
   {
-    emoji: "📊", title: "Data & AI Productivity for Business", weeks: 6, level: "Beginner–Intermediate", tag: "Future-Ready", tagBg: "#FFF3E0", tagC: "#E65100",
-    desc: "Advanced Excel, Google Sheets, data visualisation, and AI tools that immediately boost productivity and business intelligence.",
-    skills: ["Advanced Excel & Google Sheets", "Data visualisation tools", "AI productivity tools", "Business data analysis"]
+    emoji: "📣", title: "Digital Marketing, Creative Media & Photography", weeks: "6", level: "Beginner", tag: "Creative", tagBg: "#F3E5F5", tagC: "#7B1FA2",
+    desc: "Social media, content creation, SEO, e-commerce operations, photography, studio lighting, editing, and freelance business setup.",
+    skills: ["Social media and paid advertising", "SEO, email and e-commerce", "Camera, lighting and editing", "Freelance client acquisition"]
   },
   {
-    emoji: "🔧", title: "ICT Support, Hardware & Technical Services", weeks: 6, level: "Beginner", tag: "Highest Employment", tagBg: "#E8F5E9", tagC: "#1B5E20",
-    desc: "Computer hardware repair, troubleshooting, networking fundamentals, and device servicing — the track with the highest employment-to-training ratio.",
-    skills: ["Hardware repair & maintenance", "Fault diagnosis & troubleshooting", "Networking fundamentals", "Device servicing as a business"]
+    emoji: "🔧", title: "ICT Support, Hardware, GSM Repairs & Data/AI", weeks: "6–16", level: "Beginner–Intermediate", tag: "High Demand", tagBg: "#FCE4EC", tagC: "#C2185B",
+    desc: "Computer hardware, networking, data recovery, GSM servicing, productivity software, data visualisation, and AI tools for business.",
+    skills: ["Hardware diagnostics & networking", "GSM motherboard-level servicing", "Excel, Sheets & Power BI basics", "AI productivity and prompt engineering"]
   },
 ];
 
@@ -116,6 +116,25 @@ const whyUs = [
   {
     icon: <Wifi size={22} />, title: "Blended & Continuous",
     body: "Physical hub + virtual continuity platform. Alumni network and post-graduation business support so the journey doesn't end at demo day."
+  },
+];
+
+
+const serviceLines = [
+  {
+    icon: <GraduationCap size={22} />,
+    title: "Competency-Based Training",
+    body: "Digital, vocational, automotive, energy, creative, ICT hardware, GSM repair, and business programmes aligned with NSQ, NBTE/TVET, and NITDA digital economy expectations."
+  },
+  {
+    icon: <BriefcaseBusiness size={22} />,
+    title: "Consultancy & Institutional Support",
+    body: "Curriculum design, training-of-trainers, skills-gap analysis, lab/workshop design, accreditation support, and public-private TVET delivery advisory."
+  },
+  {
+    icon: <Truck size={22} />,
+    title: "Procurement, Supply & Maintenance",
+    body: "End-to-end sourcing, installation, after-sales support, and user training for computers, ICT labs, GSM repair tools, creative media equipment, and workshop resources."
   },
 ];
 
@@ -287,8 +306,8 @@ export default function AcademyHome() {
   return (
     <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
       <SEO
-        title="Affidex Academy — Vocational & Professional Training in Uyo"
-        description="Affidex Academy delivers hands-on vocational and professional training in Uyo, Nigeria — from computer hardware repair to fullstack web development. Internationally affiliated, NBTE-approved programmes."
+        title="Affidex Academy — TVET, Consultancy & Skills Development in Nigeria"
+        description="Affidex Academy delivers hands-on vocational, digital, technical, consultancy, and procurement services across Southern Nigeria, with Microsoft, UNESCO-UNEVOC, NYSC SAED, SMEDAN, NBTE/FME and NUPRC standing."
         path=""
       />
 
@@ -324,7 +343,7 @@ export default function AcademyHome() {
             {/* Headline */}
             <h1 className="anim-fadeup delay-100 font-black leading-[1.1] mb-5"
               style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.4rem,6.5vw,5.2rem)", fontWeight: 700 }}>
-              World-Class Skills Training.{" "}
+              World-Class TVET, Digital Skills & Institutional Solutions.{" "}
               <span className="italic" style={{ color: "var(--gold-2)" }}>
                 Built for&nbsp;Southern&nbsp;Nigeria.
               </span>
@@ -333,7 +352,7 @@ export default function AcademyHome() {
             {/* Sub */}
             <p className="anim-fadeup delay-200 leading-relaxed max-w-[620px]"
               style={{ fontSize: "clamp(14px,4vw,17px)", color: "rgba(255,255,255,0.7)", marginBottom: "2.5rem" }}>
-              A Microsoft-affiliated, UNESCO-UNEVOC recognised, and federally-registered vocational institution in Uyo — offering 4–8 week intensive skill tracks and the 16–24 week NBTE FME TVET Initiative with monthly stipends.
+              A Microsoft AI Cloud Partner, UNESCO-UNEVOC participant, NYSC SAED training partner, and federally positioned TVET institution delivering practical training, consultancy, manpower development, and procurement support across Akwa Ibom, Cross River, Abia, and Lagos.
             </p>
 
             {/* Credential pills */}
@@ -422,11 +441,11 @@ export default function AcademyHome() {
           <div className="mb-12 md:mb-20">
             <div className="label justify-center mb-5">Why Affidex Academy</div>
             <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(2.4rem,4.5vw,3.8rem)", fontWeight: 700, lineHeight: 1.12, color: "var(--navy)" }}>
-              We don't just train people.<br />
-              <span className="italic" style={{ color: "var(--gold)" }}>We transform futures.</span>
+              We are more than a training centre.<br />
+              <span className="italic" style={{ color: "var(--gold)" }}>We build workforce systems.</span>
             </h2>
             <p className="mt-5 text-[15.5px] leading-relaxed" style={{ color: "var(--text-mid)" }}>
-              Affidex exists to build employability, enterprise, and income pathways for underserved youth and women — not to print certificates no one asked for.
+              Affidex combines hands-on training, institutional consultancy, and equipment supply so partners can build, run, and sustain practical skills programmes at scale.
             </p>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -443,17 +462,45 @@ export default function AcademyHome() {
         </div>
       </section>
 
+
+      {/* ═══════════════ SERVICE LINES ═══════════════════════════════ */}
+      <section className="py-16 md:py-28" style={{ background: "var(--navy)", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+        <div className="container flex flex-col gap-10">
+          <div className="mb-12 md:mb-20">
+            <div className="label justify-center mb-5" style={{ color: "var(--gold)" }}>What We Do</div>
+            <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(2.4rem,4.5vw,3.8rem)", fontWeight: 700, lineHeight: 1.12, color: "#FFFFFF" }}>
+              Training, consultancy, and supply.<br />
+              <span className="italic" style={{ color: "var(--gold-2)" }}>One integrated TVET partner.</span>
+            </h2>
+            <p className="mt-5 text-[15.5px] leading-relaxed" style={{ color: "rgba(255,255,255,0.6)" }}>
+              Our work supports students, government agencies, donor programmes, corporate employers, and education institutions that need practical workforce development capacity.
+            </p>
+          </div>
+          <div className="grid gap-5 md:grid-cols-3">
+            {serviceLines.map((s, i) => (
+              <div key={i} className="rounded-2xl border p-6 md:p-8 flex flex-col gap-2" style={{ borderColor: "rgba(255,255,255,0.1)", background: "rgba(255,255,255,0.05)" }}>
+                <div className="mb-4 md:mb-5 inline-flex rounded-2xl p-3 md:p-3.5 w-fit" style={{ background: "rgba(200,146,42,0.14)" }}>
+                  <span style={{ color: "var(--gold-2)" }}>{s.icon}</span>
+                </div>
+                <h3 className="text-[15px] font-bold mb-1.5 md:mb-2.5 text-white">{s.title}</h3>
+                <p className="text-[13.5px] leading-relaxed" style={{ color: "rgba(255,255,255,0.62)" }}>{s.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ═══════════════ PROGRAMMES ══════════════════════════════════ */}
       <section className="py-16 md:py-28" style={{ background: "var(--cream)", borderTop: "1px solid var(--border)" }}>
         <div className="container flex flex-col gap-10">
           <div className="mb-12 md:mb-20">
             <div className="label justify-center mb-5">Our Programmes</div>
             <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(2.4rem,4.5vw,3.8rem)", fontWeight: 700, lineHeight: 1.12, color: "var(--navy)" }}>
-              Six tracks.<br />
-              <span className="italic" style={{ color: "var(--gold)" }}>One mission.</span>
+              Digital, technical, energy, creative, and enterprise tracks.<br />
+              <span className="italic" style={{ color: "var(--gold)" }}>One income mission.</span>
             </h2>
             <p className="mt-5 text-[15.5px] leading-relaxed" style={{ color: "var(--text-mid)" }}>
-              All programmes follow a 70% practical / 30% theory model. Every graduate leaves with demonstrated skills, a portfolio, and a clear income pathway.
+              Our programme catalogue now spans ICT, software, GSM repair, creative media, automotive, mechatronics, electrical installation, solar, EV, CNG, welding, fabrication, and entrepreneurship skills.
             </p>
           </div>
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">

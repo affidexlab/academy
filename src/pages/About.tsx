@@ -18,9 +18,9 @@ const values = [
 
 
 const regs = [
-  { cat: "Corporate Registration", items: ["CAC RC: 9316934", "Private Limited Liability Company (Ltd)", "Tax Identification Number (TIN)", "SMEDAN MSME Certificate: SUID-5998-5813-3500-9105"] },
-  { cat: "International Affiliations", items: ["Microsoft AI Cloud Partner — Verified Global Partner", "UNESCO-UNEVOC Active Member", "GIZ TVET Academy — Registered Institution", "Cisco Networking Academy — Partner Application Under Review"] },
-  { cat: "Federal Approvals & Registrations", items: ["NBTE Accreditation"] },
+  { cat: "Corporate Registration", items: ["CAC RC: 9316934", "Private Limited Liability Company (Ltd)", "TIN: 2620322622930", "SMEDAN Certificate: SUID-5998-5813-3500-9105", "BPP Interim Registration Report issued"] },
+  { cat: "Federal & Industry Standing", items: ["NYSC SAED Training Partner — Akwa Ibom & Cross River", "FME/NBTE TVET implementation through IPPN", "3MTT Applied Training Provider", "NUPRC General Category Supply Permit", "NUPRC Major Category Consultancy Training/Manpower Development Permit"] },
+  { cat: "International Affiliations", items: ["Microsoft AI Cloud Partner — Verified Global Partner", "UNESCO-UNEVOC Active Participant", "GIZ TVET Academy — Registered Institution", "Cisco, Oracle Academy, ACTD and ILO-ITCILO engagements in progress"] },
 ];
 
 export default function AcademyAbout() {
@@ -49,10 +49,10 @@ export default function AcademyAbout() {
           <h1 className="font-black leading-[1.08] mb-6"
             style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(2.8rem,6vw,4.8rem)", fontWeight: 700 }}>
             Built to close Nigeria's{" "}
-            <span className="italic" style={{ color: "var(--gold-2)" }}>digital skills gap.</span>
+            <span className="italic" style={{ color: "var(--gold-2)" }}>skills, workforce, and enterprise gap.</span>
           </h1>
           <p className="text-[17px] leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.6)" }}>
-            Affidex Academy Limited is a federally registered vocational and digital skills institution headquartered in Uyo, Akwa Ibom State, Nigeria. We exist to build sustainable employability, enterprise development, and income pathways for youth and women across Southern Nigeria through practical, internationally-aligned technology and vocational training.
+            Affidex Academy Limited is a private Nigerian TVET, digital skills, consultancy, manpower development, and procurement institution headquartered in Uyo, Akwa Ibom State, with a growing footprint across Akwa Ibom, Cross River, Abia, and Lagos. We build employability, enterprise, and workforce systems for youth, women, corps members, communities, institutions, government, donor, and corporate partners.
           </p>
           <div className="flex flex-wrap gap-2">
             {["Microsoft AI Cloud Partner", "UNESCO-UNEVOC", "SMEDAN Certified", "CAC RC-9316934"].map((b, i) => (
@@ -107,6 +107,29 @@ export default function AcademyAbout() {
                 </div>
                 <h3 className="text-[15px] font-bold mb-1.5 md:mb-2.5" style={{ color: "var(--navy)" }}>{v.title}</h3>
                 <p className="text-[13.5px] leading-relaxed" style={{ color: "var(--text-mid)" }}>{v.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* ══ SERVICE CAPACITY ═════════════════════════════════════════ */}
+      <section className="py-12 md:py-24" style={{ background: "#FFFFFF", borderBottom: "1px solid var(--border)" }}>
+        <div className="container flex flex-col gap-10">
+          <div className="label mb-5">Service Capacity</div>
+          <h2 className="mb-10 md:mb-16 max-w-2xl" style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(2rem,3.5vw,3rem)", fontWeight: 700, lineHeight: 1.15, color: "var(--navy)" }}>
+            A TVET institution, consultancy partner,<br /><span className="italic" style={{ color: "var(--gold)" }}>and procurement support provider.</span>
+          </h2>
+          <div className="grid gap-5 md:grid-cols-3 max-w-[1000px]">
+            {[
+              { title: "Training Programmes", body: "Automotive, mechatronics, electrical installation, solar, EV, CNG, welding, fabrication, digital skills, web development, creative media, GSM repair, ICT support, data/AI, and entrepreneurship." },
+              { title: "Consultancy Services", body: "Curriculum design, ToT, skills-gap studies, accreditation support, lab/workshop design, quality assurance, apprenticeship systems, and public-private partnership advisory." },
+              { title: "Procurement & Supply", body: "Computers, laptops, ICT lab equipment, GSM/mobile repair tools, hardware components, photography/office technology equipment, installation, maintenance, and user training." },
+            ].map((item) => (
+              <div key={item.title} className="card rounded-2xl border p-5 md:p-7" style={{ borderColor: "var(--border)", background: "var(--cream)" }}>
+                <h3 className="text-[15px] font-bold mb-2.5" style={{ color: "var(--navy)" }}>{item.title}</h3>
+                <p className="text-[13.5px] leading-relaxed" style={{ color: "var(--text-mid)" }}>{item.body}</p>
               </div>
             ))}
           </div>

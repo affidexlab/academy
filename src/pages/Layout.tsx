@@ -48,7 +48,7 @@ function Navbar() {
           <div className="flex flex-col leading-none">
             <span className="text-[13px] font-extrabold tracking-[0.08em] uppercase text-white">Affidex Academy</span>
             <span className="text-[9.5px] font-semibold tracking-[0.14em] uppercase" style={{ color: "var(--gold-2)" }}>
-              Vocational Education & Training
+              TVET · Consultancy · Supply
             </span>
           </div>
         </Link>
@@ -116,12 +116,12 @@ function Footer() {
               <div>
                 <div className="text-sm font-extrabold tracking-widest uppercase text-white">Affidex Academy Ltd</div>
                 <div className="text-[9.5px] font-semibold tracking-[0.14em] uppercase" style={{ color: "var(--gold-2)" }}>
-                  Vocational Education & Training
+                  TVET · Consultancy · Supply
                 </div>
               </div>
             </div>
             <p className="text-[13.5px] leading-relaxed mb-4" style={{ color: "#7A8FA6" }}>
-              Building employability, enterprise, and income pathways for underserved youth, women, and communities across Southern Nigeria through practical, industry-aligned ICT and technology training.
+              Building employability, enterprise, and workforce systems across Southern Nigeria through practical TVET, digital skills, consultancy, manpower development, and equipment supply.
             </p>
             <div className="text-xs mb-6" style={{ color: "#4A6080" }}>
               RC: 9316934 · SMEDAN: SUID-5998-5813-3500-9105
@@ -152,7 +152,7 @@ function Footer() {
           <div className="flex flex-col gap-2">
             <h4 className="label mb-4 md:mb-6">Our Tracks</h4>
             <ul className="space-y-2 md:space-y-3 text-[13px] flex flex-col gap-2" style={{ color: "#7A8FA6" }}>
-              {["Digital Foundations", "Web & Coding", "Digital Marketing", "UI/UX Design", "Data & AI", "ICT Support & Hardware"].map((t, i) => (
+              {["Automotive & Mechatronics", "Electrical, Solar, EV & CNG", "Welding & Fabrication", "Web & Digital Skills", "Creative Media & GSM Repairs", "Consultancy & Supply"].map((t, i) => (
                 <li key={i} className="hover:text-white transition-colors cursor-default">{t}</li>
               ))}
             </ul>

@@ -40,70 +40,81 @@ const tvetProgramme = {
 // Core 4-8 Week Intensive Tracks
 const shortTracks = [
   {
-    id: "digital-foundations",
-    emoji: "🖥️",
-    title: "Digital Foundations & Workplace Readiness",
-    duration: "4 weeks",
-    level: "Beginner",
-    tag: "Essential",
+    id: "automobile-mechatronics",
+    emoji: "🚗",
+    title: "Automobile Maintenance & Auto-Mechatronics",
+    duration: "16–24 weeks",
+    level: "Beginner–Advanced",
+    tag: "Technical Trade",
     tagBg: "bg-emerald-50 text-emerald-700 border-emerald-200",
-    desc: "Computer literacy, productivity tools, internet safety, digital CV, and portfolio basics — the launchpad for every modern career.",
-    skills: ["Computer literacy & Microsoft Office", "Google Workspace & productivity tools", "Cyber hygiene & digital safety", "Digital CV & portfolio building"],
+    desc: "Diagnostics, servicing, repairs, sensors, actuators, hybrid systems, and modern automotive electronic systems.",
+    skills: ["Engine diagnostics", "Auto electrical systems", "Hybrid vehicle fundamentals", "Workshop operations"],
+  },
+  {
+    id: "energy-systems",
+    emoji: "⚡",
+    title: "Electrical, Solar, EV & CNG Systems",
+    duration: "16–24 weeks",
+    level: "Beginner–Intermediate",
+    tag: "Energy",
+    tagBg: "bg-amber-50 text-amber-700 border-amber-200",
+    desc: "Electrical installation, solar PV systems, electric vehicle maintenance, and CNG conversion support.",
+    skills: ["Wiring and fault detection", "Solar PV installation", "EV diagnostics", "CNG kit maintenance"],
+  },
+  {
+    id: "welding-fabrication",
+    emoji: "🛠️",
+    title: "Welding, Fabrication & Vehicle Body Works",
+    duration: "16–24 weeks",
+    level: "Beginner–Advanced",
+    tag: "Industrial",
+    tagBg: "bg-slate-50 text-slate-700 border-slate-200",
+    desc: "Structural welding, fabrication, vehicle body building, vulcanizing, and production-hub work practice.",
+    skills: ["Structural and pipe welding", "Fabrication safety", "Vehicle body building", "Vulcanizing operations"],
   },
   {
     id: "coding-web",
     emoji: "🧩",
-    title: "Coding, Web & Product Foundations",
-    duration: "8 weeks",
+    title: "Web Development & Coding Foundations",
+    duration: "8–24 weeks",
+    level: "Beginner–Intermediate",
+    tag: "Digital",
+    tagBg: "bg-blue-50 text-blue-700 border-blue-200",
+    desc: "HTML, CSS, Tailwind, JavaScript, Git/GitHub, React foundations, and deployment of live websites.",
+    skills: ["HTML5, CSS3 & Tailwind", "JavaScript and React", "Git/GitHub", "Live portfolio projects"],
+  },
+  {
+    id: "marketing-creative-media",
+    emoji: "📣",
+    title: "Digital Marketing, Creative Media & Photography",
+    duration: "6 weeks",
+    level: "Beginner",
+    tag: "Creative",
+    tagBg: "bg-purple-50 text-purple-700 border-purple-200",
+    desc: "Social media, SEO, paid ads, e-commerce, camera operation, studio lighting, editing, and creative freelancing.",
+    skills: ["Content and paid advertising", "SEO and e-commerce", "Photography and lighting", "Lightroom and Photoshop"],
+  },
+  {
+    id: "ict-gsm-data-ai",
+    emoji: "🔧",
+    title: "ICT Support, GSM Repairs, Data & AI Productivity",
+    duration: "6–16 weeks",
     level: "Beginner–Intermediate",
     tag: "High Demand",
-    tagBg: "bg-blue-50 text-blue-700 border-blue-200",
-    desc: "HTML, CSS, JavaScript fundamentals and product thinking — everything needed to build real web experiences.",
-    skills: ["HTML5, CSS3, Tailwind CSS", "JavaScript ES6+ fundamentals", "Frontend development basics", "Product thinking introduction"],
-  },
-  {
-    id: "digital-marketing",
-    emoji: "📣",
-    title: "Digital Marketing & Sales Operations",
-    duration: "6 weeks",
-    level: "Beginner",
-    tag: "Popular",
-    tagBg: "bg-purple-50 text-purple-700 border-purple-200",
-    desc: "Social media marketing, SEO, email campaigns, e-commerce operations, and freelance client acquisition on global platforms.",
-    skills: ["Social media marketing & content", "SEO & email marketing campaigns", "E-commerce operations", "Upwork & Fiverr onboarding"],
-  },
-  {
-    id: "ui-ux",
-    emoji: "🎨",
-    title: "UI/UX & Product Design",
-    duration: "6 weeks",
-    level: "Beginner–Intermediate",
-    tag: "Creative",
     tagBg: "bg-pink-50 text-pink-700 border-pink-200",
-    desc: "Figma, user research, wireframing, prototyping, and design systems — build a world-class portfolio for employment.",
-    skills: ["Figma from scratch to advanced", "User research & personas", "Wireframing & interactive prototypes", "Design systems & portfolio"],
+    desc: "Computer hardware, operating systems, networking, GSM servicing, data visualisation, Power BI basics, and AI tools.",
+    skills: ["Hardware and networking", "GSM motherboard-level repair", "Excel, Sheets and Power BI", "AI productivity tools"],
   },
   {
-    id: "data-ai",
-    emoji: "📊",
-    title: "Data & AI Productivity for Business",
-    duration: "6 weeks",
-    level: "Beginner–Intermediate",
-    tag: "Future-Ready",
-    tagBg: "bg-amber-50 text-amber-700 border-amber-200",
-    desc: "Advanced Excel, Google Sheets, data visualization, and AI tools that immediately boost business productivity.",
-    skills: ["Advanced Excel & Google Sheets", "Data visualization tools", "AI productivity & prompts", "Business data analysis"],
-  },
-  {
-    id: "ict-support",
-    emoji: "🔧",
-    title: "ICT Support, Hardware & Technical Services",
-    duration: "6 weeks",
-    level: "Beginner",
-    tag: "Highest Employment",
-    tagBg: "bg-emerald-50 text-emerald-800 border-emerald-200",
-    desc: "Hardware repair, troubleshooting, networking fundamentals, and device servicing — high immediate income potential.",
-    skills: ["Hardware repair & maintenance", "Fault diagnosis & troubleshooting", "Networking fundamentals", "Device servicing enterprise"],
+    id: "business-entrepreneurship",
+    emoji: "💼",
+    title: "Entrepreneurship & Business Skills",
+    duration: "4–6 weeks",
+    level: "All Levels",
+    tag: "Enterprise",
+    tagBg: "bg-green-50 text-green-700 border-green-200",
+    desc: "Business planning, costing, marketing, customer service, financial management, and micro-enterprise readiness.",
+    skills: ["Business planning", "Costing and pricing", "Customer service", "Financial management"],
   },
 ];
 
@@ -113,18 +124,18 @@ export default function AcademyProgrammes() {
   return (
     <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
       <SEO
-        title="Training Programmes — Affidex Academy"
-        description="Explore Affidex Academy's TVET Initiative and intensive digital skill tracks in Uyo. 100% free training, NBTE approved credentials, and stipends for TVET trainees."
+        title="Programmes & Services — Affidex Academy"
+        description="Explore Affidex Academy's digital, vocational, automotive, energy, creative, ICT, GSM repair, consultancy, and procurement services across Southern Nigeria."
         path="/programmes"
       />
 
       {/* Hero */}
       <section className="bg-[#0A2540] py-16 md:py-24 text-white">
         <div className="container flex flex-col gap-4">
-          <p className="text-xs font-bold uppercase tracking-widest text-[#C9973A] mb-3">Our Training Streams</p>
-          <h1 className="text-4xl font-extrabold md:text-5xl">Industry-Driven Vocational Programmes</h1>
+          <p className="text-xs font-bold uppercase tracking-widest text-[#C9973A] mb-3">Programmes & Service Streams</p>
+          <h1 className="text-4xl font-extrabold md:text-5xl">Industry-Driven TVET, Digital & Technical Programmes</h1>
           <p className="mt-4 text-base md:text-lg text-slate-300">
-            Affidex Academy offers two flexible pathways to build income-generating technical skills: the comprehensive 16–24 week NBTE TVET Initiative (with stipends) and 4–8 week intensive skill tracks.
+            Affidex Academy delivers competency-based training, consultancy, manpower development, and procurement support for individuals, government agencies, donors, corporate employers, and education institutions.
           </p>
         </div>
       </section>
@@ -133,13 +144,13 @@ export default function AcademyProgrammes() {
       <section className="bg-slate-50 border-b py-6">
         <div className="container flex flex-wrap gap-4 justify-center text-sm font-semibold text-[#0A2540]">
           <span className="flex items-center gap-2 bg-white px-4 py-2 rounded-full border shadow-sm">
-            <Sparkles size={16} className="text-[#C9973A]" /> 100% Free Tuition — Zero Hidden Charges
+            <Sparkles size={16} className="text-[#C9973A]" /> Training · Consultancy · Supply
           </span>
           <span className="flex items-center gap-2 bg-white px-4 py-2 rounded-full border shadow-sm">
-            <Award size={16} className="text-[#C9973A]" /> Government Approved NBTE & Affidex Certificates
+            <Award size={16} className="text-[#C9973A]" /> NSQ/NBTE/TVET-Aligned Delivery
           </span>
           <span className="flex items-center gap-2 bg-white px-4 py-2 rounded-full border shadow-sm">
-            <Zap size={16} className="text-[#C9973A]" /> 70%+ Hands-on Practical Instruction
+            <Zap size={16} className="text-[#C9973A]" /> 70% Hands-on Labs & Projects
           </span>
         </div>
       </section>
@@ -243,12 +254,12 @@ export default function AcademyProgrammes() {
       <section className="py-12 md:py-16 bg-slate-50 border-t">
         <div className="container">
           <div className="mb-8">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#C9973A]">Pathway 2</span>
+            <span className="text-xs font-bold uppercase tracking-widest text-[#C9973A]">Expanded Catalogue</span>
             <h2 className="text-2xl md:text-3xl font-extrabold text-[#0A2540] mt-1">
-              Intensive Skill Tracks (4–8 Weeks)
+              Expanded Digital, Technical & Vocational Tracks
             </h2>
             <p className="text-sm text-slate-600 mt-2 max-w-3xl">
-              Short-term, high-impact bootcamp tracks focused on practical tools, project portfolios, and immediate freelance or employment readiness.
+              A wider practical catalogue covering digital, automotive, energy, industrial, creative, hardware, GSM repair, and enterprise skills drawn from the updated company profile.
             </p>
           </div>
 
