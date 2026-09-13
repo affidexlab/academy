@@ -791,7 +791,7 @@ export default function AcademyHome() {
               style={{ paddingTop: "18px", paddingBottom: "18px" }}>
               Learn More About Us
             </Link>
-            <a href="/affidex-academy-company-profile.docx"
+            <a href="/affidex-academy-company-profile.pdf"
               className="btn-ghost inline-flex items-center justify-center gap-2.5 rounded-full px-11 text-[15px]"
               style={{ paddingTop: "18px", paddingBottom: "18px" }}>
               Download Company Profile
