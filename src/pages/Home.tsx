@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2, BookOpen, MapPin, Zap, Shield, Target, Wifi, Users, Award, BriefcaseBusiness, Truck, GraduationCap } from "lucide-react";
+import { ArrowRight, CheckCircle2, BookOpen, MapPin, Zap, Shield, Target, Wifi, Users, Award, BriefcaseBusiness, Truck, GraduationCap, ChevronLeft, ChevronRight } from "lucide-react";
 import { CEO_PHOTO } from "../assets/logos";
 import { GLORY_PHOTO, EDIDIONG_PHOTO, EDIKAN_PHOTO } from "../assets/team_photos";
 import SEO from "../components/SEO";
