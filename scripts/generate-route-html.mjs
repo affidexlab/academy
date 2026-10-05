@@ -24,10 +24,20 @@ const pages = {
     canonical: 'https://affidexacademy.com.ng/partnerships-accreditations',
   },
 
+  'programmes/online-skills-accelerator': {
+    title: 'Online Skills Accelerator — Affidex Academy',
+    description: 'Explore and apply for the AFFIDEX Online Skills Accelerator. Choose an in-demand online course, submit your application, and receive a unique application ID.',
+    canonical: 'https://affidexacademy.com.ng/programmes/online-skills-accelerator',
+  },
+  'programmes/online-skills-accelerator/apply': {
+    title: 'Apply for the Online Skills Accelerator — Affidex Academy',
+    description: 'Apply for the AFFIDEX Online Skills Accelerator and receive a unique application ID.',
+    canonical: 'https://affidexacademy.com.ng/programmes/online-skills-accelerator/apply',
+  },
   'apply': {
     title: 'Online Skills Accelerator Application — Affidex Academy',
-    description: 'Apply for the AFFIDEX Online Skills Accelerator. Choose an in-demand online course, submit your application, and receive a unique application ID.',
-    canonical: 'https://affidexacademy.com.ng/apply',
+    description: 'Apply for the AFFIDEX Online Skills Accelerator. This legacy application link remains available for existing campaign links.',
+    canonical: 'https://affidexacademy.com.ng/programmes/online-skills-accelerator',
   },
   'onlineskills': {
     title: 'AFFIDEX Online Skills Accelerator — Apply Now',

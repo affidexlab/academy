@@ -47,8 +47,10 @@ export default function App() {
           <Route path="/*" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="programmes" element={<Programmes />} />
-            <Route path="apply" element={<OnlineSkillsApplication />} />
+            <Route path="programmes/online-skills-accelerator" element={<OnlineSkillsApplication />} />
+            <Route path="programmes/online-skills-accelerator/apply" element={<OnlineSkillsApplication />} />
             <Route path="onlineskills" element={<OnlineSkillsApplication />} />
+            <Route path="apply" element={<OnlineSkillsApplication />} />
             <Route path="about" element={<About />} />
             <Route path="corporate-government" element={<Corporate />} />
             <Route path="partnerships-accreditations" element={<Partnerships />} />
