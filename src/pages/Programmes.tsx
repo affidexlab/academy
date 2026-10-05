@@ -250,7 +250,77 @@ export default function AcademyProgrammes() {
         </div>
       </section>
 
-      {/* Stream 2: 4-8 Week Intensive Skill Tracks */}
+
+      {/* Stream 2: Online Skills Accelerator */}
+      <section className="py-12 md:py-16 bg-[#FBF5E8] border-t">
+        <div className="container">
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-widest text-[#C9973A]">Pathway 2</span>
+              <h2 className="text-2xl md:text-3xl font-extrabold text-[#0A2540] mt-1">
+                Online Skills Accelerator
+              </h2>
+              <p className="text-sm text-slate-700 mt-3 leading-relaxed">
+                A 100% online, practical skills pathway for learners who want flexible training in high-demand digital and business-support areas. Applicants can review the course options, choose a primary course, submit readiness information, and receive an Application ID immediately.
+              </p>
+              <div className="mt-5 grid gap-3 sm:grid-cols-2 text-sm">
+                <div className="rounded-2xl border bg-white p-4">
+                  <span className="text-xs font-bold uppercase tracking-widest text-slate-400">Delivery</span>
+                  <p className="mt-1 font-extrabold text-[#0A2540]">100% online</p>
+                </div>
+                <div className="rounded-2xl border bg-white p-4">
+                  <span className="text-xs font-bold uppercase tracking-widest text-slate-400">Fee</span>
+                  <p className="mt-1 font-extrabold text-[#0A2540]">₦100,000 per learner</p>
+                </div>
+                <div className="rounded-2xl border bg-white p-4">
+                  <span className="text-xs font-bold uppercase tracking-widest text-slate-400">Courses</span>
+                  <p className="mt-1 font-extrabold text-[#0A2540]">Cybersecurity, Web, Data, Design, Marketing & more</p>
+                </div>
+                <div className="rounded-2xl border bg-white p-4">
+                  <span className="text-xs font-bold uppercase tracking-widest text-slate-400">Application</span>
+                  <p className="mt-1 font-extrabold text-[#0A2540]">No account required</p>
+                </div>
+              </div>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  to="/programmes/online-skills-accelerator"
+                  className="btn-gold inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-xs font-bold"
+                >
+                  View Online Skills Accelerator <ArrowRight size={14} />
+                </Link>
+                <Link
+                  to="/programmes/online-skills-accelerator/apply"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#0A2540] px-6 py-3 text-xs font-bold text-[#0A2540] hover:bg-[#0A2540] hover:text-white transition-colors"
+                >
+                  Apply for this programme <ArrowRight size={14} />
+                </Link>
+              </div>
+            </div>
+            <div className="rounded-3xl border bg-white p-6 shadow-sm">
+              <h3 className="text-sm font-extrabold uppercase tracking-widest text-[#0A2540]">Current online course options</h3>
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                {[
+                  "Cybersecurity Fundamentals",
+                  "App Development",
+                  "Web Development",
+                  "Data Analysis & Business Intelligence",
+                  "Digital Marketing",
+                  "Graphic Design & Creative Media",
+                  "UI/UX Design",
+                  "Virtual Assistance & Remote Work",
+                ].map((course) => (
+                  <div key={course} className="flex items-start gap-2 rounded-2xl bg-slate-50 p-3 text-xs font-semibold text-slate-700">
+                    <CheckCircle2 size={14} className="mt-0.5 shrink-0 text-[#C9973A]" />
+                    {course}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stream 3: 4-8 Week Intensive Skill Tracks */}
       <section className="py-12 md:py-16 bg-slate-50 border-t">
         <div className="container">
           <div className="mb-8">
@@ -259,7 +329,7 @@ export default function AcademyProgrammes() {
               Expanded Digital, Technical & Vocational Tracks
             </h2>
             <p className="text-sm text-slate-600 mt-2 max-w-3xl">
-              A wider practical catalogue covering digital, automotive, energy, industrial, creative, hardware, GSM repair, and enterprise skills drawn from the updated company profile.
+              A wider practical catalogue covering digital, automotive, energy, industrial, creative, hardware, GSM repair, and enterprise skills drawn from the updated company profile. The Online Skills Accelerator now has its own dedicated programme page and application journey.
             </p>
           </div>
 
@@ -288,10 +358,10 @@ export default function AcademyProgrammes() {
                   </ul>
                 </div>
                 <Link
-                  to="/contact"
+                  to={st.id === "coding-web" ? "/programmes/online-skills-accelerator" : "/contact"}
                   className="w-full inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#0A2540] py-2.5 text-xs font-bold text-[#0A2540] hover:bg-[#0A2540] hover:text-white transition-colors"
                 >
-                  Apply for this track <ArrowRight size={13} />
+                  {st.id === "coding-web" ? "View online pathway" : "Apply for this track"} <ArrowRight size={13} />
                 </Link>
               </div>
             ))}
@@ -308,7 +378,7 @@ export default function AcademyProgrammes() {
           </p>
           <div className="pt-2 flex justify-center gap-4">
             <Link to="/contact" className="btn-gold rounded-full px-8 py-3 text-xs font-bold inline-flex items-center gap-2">
-              Apply / Contact Us <ArrowRight size={14} />
+              Choose a Programme <ArrowRight size={14} />
             </Link>
           </div>
         </div>

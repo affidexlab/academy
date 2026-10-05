@@ -17,7 +17,6 @@ const team = [
     photo: EDIDIONG_PHOTO,
     name: "Mr. Edidiong Samuel",
     role: "Managing Director / Head, Training and Curriculum Development",
-    tag: "Co-Founder",
   },
   {
     photo: GLORY_PHOTO,
@@ -241,13 +240,14 @@ function TeamSlider() {
                     </span>
                   </div>
                 )}
-                {/* Tag badge */}
-                <div className="absolute top-3 left-3">
-                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-full"
-                    style={{ background: "rgba(200,146,42,0.85)", color: "#fff", letterSpacing: "0.06em" }}>
-                    {m.tag}
-                  </span>
-                </div>
+                {m.tag && (
+                  <div className="absolute top-3 left-3">
+                    <span className="text-[10px] font-bold px-2.5 py-1 rounded-full"
+                      style={{ background: "rgba(200,146,42,0.85)", color: "#fff", letterSpacing: "0.06em" }}>
+                      {m.tag}
+                    </span>
+                  </div>
+                )}
               </div>
               {/* Info */}
               <div className="p-5 flex flex-col gap-2">
@@ -273,12 +273,14 @@ function TeamSlider() {
                   </span>
                 </div>
               )}
-              <div className="absolute top-3 left-3">
-                <span className="text-[10px] font-bold px-2.5 py-1 rounded-full"
-                  style={{ background: "rgba(200,146,42,0.85)", color: "#fff" }}>
-                  {team[current].tag}
-                </span>
-              </div>
+              {team[current].tag && (
+                <div className="absolute top-3 left-3">
+                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-full"
+                    style={{ background: "rgba(200,146,42,0.85)", color: "#fff" }}>
+                    {team[current].tag}
+                  </span>
+                </div>
+              )}
             </div>
             <div className="p-6">
               <h4 className="text-[16px] font-bold text-white mb-1">{team[current].name}</h4>
