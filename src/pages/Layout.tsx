@@ -18,6 +18,7 @@ function Navbar() {
   const links = [
     { to: "", label: "Home" },
     { to: "/programmes", label: "Programmes" },
+    { to: "/apply", label: "Apply" },
     { to: "/about", label: "About" },
     { to: "/corporate-government", label: "Partners" },
   ];
@@ -64,9 +65,9 @@ function Navbar() {
                 style={{ background: "var(--gold)" }} />
             </Link>
           ))}
-          <Link to="/contact"
+          <Link to="/apply"
             className="btn-gold inline-flex items-center gap-2 rounded-full px-6 py-2.5 text-[13px]">
-            Contact Us <ArrowRight size={14} />
+            Apply Now <ArrowRight size={14} />
           </Link>
         </nav>
 
@@ -86,9 +87,9 @@ function Navbar() {
                 {l.label} <ChevronRight size={15} />
               </Link>
             ))}
-            <Link to="/contact" onClick={() => setOpen(false)}
+            <Link to="/apply" onClick={() => setOpen(false)}
               className="btn-gold mt-4 flex items-center justify-center gap-2 rounded-full px-6 py-4 text-[15px]">
-              Contact Us — Free <ArrowRight size={16} />
+              Apply Now <ArrowRight size={16} />
             </Link>
           </div>
         </div>
@@ -143,7 +144,7 @@ function Footer() {
           <div className="flex flex-col gap-2">
             <h4 className="label mb-4 md:mb-6">Navigation</h4>
             <ul className="space-y-2 md:space-y-3 text-[13.5px] flex flex-col gap-2" style={{ color: "#7A8FA6" }}>
-              {[["Home", ""], ["Programmes", "/programmes"], ["About Us", "/about"], ["Corporate/Government", "/corporate-government"], ["Accreditations", "/partnerships-accreditations"], ["Contact Us", "/contact"]].map(([l, t]) => (
+              {[["Home", ""], ["Programmes", "/programmes"], ["Apply", "/apply"], ["About Us", "/about"], ["Corporate/Government", "/corporate-government"], ["Accreditations", "/partnerships-accreditations"], ["Contact Us", "/contact"]].map(([l, t]) => (
                 <li key={t}><Link to={t} className="hover:text-white transition-colors">{l}</Link></li>
               ))}
             </ul>

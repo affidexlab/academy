@@ -23,6 +23,17 @@ const pages = {
     description: "Affidex Academy's verified registrations, active partnerships, accreditations, permits, and in-progress institutional engagements, clearly separated for institutional credibility.",
     canonical: 'https://affidexacademy.com.ng/partnerships-accreditations',
   },
+
+  'apply': {
+    title: 'Online Skills Accelerator Application — Affidex Academy',
+    description: 'Apply for the AFFIDEX Online Skills Accelerator. Choose an in-demand online course, submit your application, and receive a unique application ID.',
+    canonical: 'https://affidexacademy.com.ng/apply',
+  },
+  'onlineskills': {
+    title: 'AFFIDEX Online Skills Accelerator — Apply Now',
+    description: 'Start your AFFIDEX Online Skills Accelerator application, view course options, and check application status.',
+    canonical: 'https://affidexacademy.com.ng/onlineskills',
+  },
   'contact': {
     title: 'Contact & Application — Affidex Academy',
     description: "Apply for Affidex Academy's vocational, digital, technical, and TVET programmes or contact admissions, partnerships, consultancy, and procurement support in Uyo, Akwa Ibom State.",
