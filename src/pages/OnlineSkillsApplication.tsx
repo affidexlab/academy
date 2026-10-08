@@ -36,7 +36,6 @@ const initialForm = {
   experience: "",
   primaryCourse: "",
   secondChoice: "",
-  cohort: "Next available cohort",
   smartphone: "",
   computer: "",
   internet: "",
@@ -209,8 +208,7 @@ export default function OnlineSkillsApplication() {
           experience: application.experience,
           primary_course: application.primaryCourse,
           second_choice: application.secondChoice || null,
-          cohort: application.cohort || null,
-          smartphone: application.smartphone,
+            smartphone: application.smartphone,
           computer: application.computer,
           internet: application.internet,
           hours: application.hours,
@@ -404,7 +402,6 @@ export default function OnlineSkillsApplication() {
                 <div className="grid gap-5 md:grid-cols-2">
                   <SelectField label="Primary course" name="primaryCourse" value={form.primaryCourse} onChange={update} options={courses.map((course) => course.title)} required error={errors.primaryCourse} />
                   <SelectField label="Second choice" name="secondChoice" value={form.secondChoice} onChange={update} options={courses.map((course) => course.title)} error={errors.secondChoice} />
-                  <SelectField label="Preferred cohort / start date" name="cohort" value={form.cohort} onChange={update} options={["Next available cohort", "Weekend-friendly cohort", "Evening cohort", "Notify me of future cohort"]} />
                 </div>
               </div>
 
