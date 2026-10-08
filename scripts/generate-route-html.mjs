@@ -44,6 +44,11 @@ const pages = {
     description: 'Start your AFFIDEX Online Skills Accelerator application, view course options, and check application status.',
     canonical: 'https://affidexacademy.com.ng/onlineskills',
   },
+  'admin': {
+    title: 'Admissions Admin — Affidex Academy',
+    description: 'Secure admissions dashboard for AFFIDEX Academy.',
+    canonical: 'https://affidexacademy.com.ng/admin',
+  },
   'contact': {
     title: 'Contact & Application — Affidex Academy',
     description: "Apply for Affidex Academy's vocational, digital, technical, and TVET programmes or contact admissions, partnerships, consultancy, and procurement support in Uyo, Akwa Ibom State.",

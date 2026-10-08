@@ -15,6 +15,7 @@ const Partnerships = lazy(() => import("./pages/Partnerships"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsConditions = lazy(() => import("./pages/TermsConditions"));
 const OnlineSkillsApplication = lazy(() => import("./pages/OnlineSkillsApplication"));
+const AdminAdmissions = lazy(() => import("./pages/AdminAdmissions"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 function PageLoader() {
@@ -55,6 +56,7 @@ export default function App() {
             <Route path="corporate-government" element={<Corporate />} />
             <Route path="partnerships-accreditations" element={<Partnerships />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="admin" element={<AdminAdmissions />} />
             <Route path="privacy-policy" element={<PrivacyPolicy />} />
             <Route path="terms-and-conditions" element={<TermsConditions />} />
             <Route path="terms-conditions" element={<TermsConditions />} />

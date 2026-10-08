@@ -2,6 +2,7 @@ import { FormEvent, useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { ArrowRight, Award, BarChart3, CheckCircle2, Clock, Mail, MessageCircle, Phone, Search, ShieldCheck, Sparkles, Users } from "lucide-react";
 import SEO from "../components/SEO";
+import { isSupabaseConfigured, supabase, type AdmissionApplication } from "../lib/supabase";
 
 const courses = [
   { title: "Cybersecurity Fundamentals", category: "Cybersecurity", tag: "Hot course", desc: "Learn core cyber hygiene, threat awareness, safe systems use, and security foundations for entry-level roles." },
@@ -175,9 +176,10 @@ export default function OnlineSkillsApplication() {
     return Object.keys(next).length === 0;
   };
 
-  const submit = (event: FormEvent) => {
+  const submit = async (event: FormEvent) => {
     event.preventDefault();
     if (!validate()) return;
+
     const application: StoredApplication = {
       ...form,
       phone: normalizePhone(form.phone),
@@ -186,6 +188,47 @@ export default function OnlineSkillsApplication() {
       status: "Submitted",
       campaign,
     };
+
+    if (isSupabaseConfigured && supabase) {
+      const { error } = await supabase.rpc("submit_admission_application", {
+        payload: {
+          application_id: application.id,
+          status: application.status,
+          payment_status: "Pending",
+          first_name: application.firstName,
+          middle_name: application.middleName || null,
+          last_name: application.lastName,
+          phone: application.phone,
+          email: application.email,
+          state: application.state,
+          city: application.city,
+          age_range: application.ageRange,
+          education: application.education,
+          current_status: application.currentStatus,
+          occupation: application.occupation || null,
+          experience: application.experience,
+          primary_course: application.primaryCourse,
+          second_choice: application.secondChoice || null,
+          cohort: application.cohort || null,
+          smartphone: application.smartphone,
+          computer: application.computer,
+          internet: application.internet,
+          hours: application.hours,
+          format: application.format,
+          goal: application.goal,
+          source: application.source,
+          referral: application.referral || null,
+          campaign,
+          updates: application.updates,
+        },
+      });
+
+      if (error) {
+        setErrors({ duplicate: error.message.includes("duplicate") ? "An application already exists for this email or phone." : `Submission failed: ${error.message}` });
+        return;
+      }
+    }
+
     localStorage.setItem("affidexOnlineSkillsApplications", JSON.stringify([application, ...loadApplications()]));
     localStorage.removeItem("affidexOnlineSkillsDraft");
     setSubmitted(application);
@@ -193,9 +236,29 @@ export default function OnlineSkillsApplication() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const checkStatus = (event: FormEvent) => {
+  const checkStatus = async (event: FormEvent) => {
     event.preventDefault();
     const contact = statusQuery.contact.trim().toLowerCase();
+
+    if (isSupabaseConfigured && supabase) {
+      const { data } = await supabase.rpc("check_application_status", {
+        lookup_application_id: statusQuery.id.trim(),
+        lookup_contact: contact,
+      }).maybeSingle<Pick<AdmissionApplication, "application_id" | "status" | "primary_course" | "created_at">>();
+
+      if (data) {
+        setStatusResult({
+          ...initialForm,
+          id: data.application_id,
+          status: data.status,
+          primaryCourse: data.primary_course,
+          submittedAt: data.created_at,
+          campaign: {},
+        });
+        return;
+      }
+    }
+
     const result = loadApplications().find((application) => application.id.toLowerCase() === statusQuery.id.trim().toLowerCase() && (application.email.toLowerCase() === contact || normalizePhone(application.phone).toLowerCase() === normalizePhone(contact).toLowerCase()));
     setStatusResult(result || "missing");
   };
@@ -225,7 +288,7 @@ export default function OnlineSkillsApplication() {
                 </div>
               ))}
             </div>
-            <p className="mt-5 rounded-2xl border border-[#C8922A]/30 bg-[#C8922A]/10 p-4 text-sm leading-7 text-slate-200">Submit your application in a few minutes. You’ll receive a unique Application ID immediately after completion.</p>
+            <p className="mt-5 rounded-2xl border border-[#C8922A]/30 bg-[#C8922A]/10 p-4 text-sm leading-7 text-slate-200">Submit your application in a few minutes. You’ll receive a unique Application ID immediately after completion, and AFFIDEX admissions will see it in the dashboard.</p>
           </div>
         </div>
       </section>
