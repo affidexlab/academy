@@ -12,6 +12,7 @@ function csvEscape(value: unknown) {
 
 export default function AdminAdmissions() {
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [sessionEmail, setSessionEmail] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [applications, setApplications] = useState<AdmissionApplication[]>([]);
@@ -71,6 +72,12 @@ export default function AdminAdmissions() {
   const signIn = async (event: FormEvent) => {
     event.preventDefault();
     if (!supabase) return;
+    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    setMessage(error ? error.message : "Signed in.");
+  };
+
+  const sendMagicLink = async () => {
+    if (!supabase || !email) return;
     const { error } = await supabase.auth.signInWithOtp({
       email,
       options: { emailRedirectTo: `${window.location.origin}/admin` },
@@ -119,9 +126,11 @@ export default function AdminAdmissions() {
           <form onSubmit={signIn} className="w-full max-w-md rounded-[2rem] border border-white/10 bg-white/10 p-8 shadow-2xl backdrop-blur">
             <ShieldCheck className="mb-5 text-[#F5C96A]" size={36} />
             <h1 className="font-serif text-4xl font-bold">Admissions Admin</h1>
-            <p className="mt-3 text-sm leading-7 text-slate-300">Enter an approved admin email. Supabase will send a secure login link.</p>
+            <p className="mt-3 text-sm leading-7 text-slate-300">Enter an approved admin email and password to access applications.</p>
             <input value={email} onChange={(event) => setEmail(event.target.value)} type="email" required placeholder="admin@affidexacademy.com.ng" className="mt-6 w-full rounded-2xl border border-white/10 px-4 py-3 text-[#0B1C2E] outline-none" />
-            <button className="btn-gold mt-4 w-full rounded-full px-6 py-3 text-sm">Send login link</button>
+            <input value={password} onChange={(event) => setPassword(event.target.value)} type="password" required placeholder="Password" className="mt-3 w-full rounded-2xl border border-white/10 px-4 py-3 text-[#0B1C2E] outline-none" />
+            <button className="btn-gold mt-4 w-full rounded-full px-6 py-3 text-sm">Sign in</button>
+            <button type="button" onClick={sendMagicLink} className="mt-3 w-full rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-white">Send magic link instead</button>
             {message && <p className="mt-4 text-sm text-[#F5C96A]">{message}</p>}
           </form>
         </div>
