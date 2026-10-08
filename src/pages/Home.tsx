@@ -367,9 +367,9 @@ export default function AcademyHome() {
             {/* Headline */}
             <h1 className="anim-fadeup delay-100 font-black leading-[1.1] mb-5"
               style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.4rem,6.5vw,5.2rem)", fontWeight: 700 }}>
-              World-Class TVET, Digital Skills & Institutional Solutions.{" "}
+              World-Class TVET, Digital Skills & Institutional Solutions in {" "}
               <span className="italic" style={{ color: "var(--gold-2)" }}>
-                Built for&nbsp;Southern&nbsp;Nigeria.
+                Nigeria.
               </span>
             </h1>
 
