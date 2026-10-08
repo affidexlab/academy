@@ -74,7 +74,7 @@ export default function SEO({ title, description, path = "", image = "/logo.png"
       "sameAs": [
         "https://facebook.com",
         "https://twitter.com",
-        "https://linkedin.com",
+        "https://linkedin.com/company/affidexacademy",
         "https://instagram.com"
       ]
     };
